@@ -1,6 +1,13 @@
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import { useState } from 'react';
+import { memo } from 'react';
+
+
+
+function comparePrevPropWithNextProps(prevProps, nextProps) {
+    return prevProps.item.title === nextProps.item.title && prevProps.item.id === nextProps.item.id;
+}
 
 
 const TodoItemInformation = ({item}) => {
@@ -18,4 +25,4 @@ const TodoItemInformation = ({item}) => {
     ) ;
 }
 
-export default TodoItemInformation ;
+export default memo(TodoItemInformation , comparePrevPropWithNextProps) ;

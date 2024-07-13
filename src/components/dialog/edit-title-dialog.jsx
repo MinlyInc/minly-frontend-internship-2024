@@ -23,16 +23,13 @@ export default function EditTitleDialog({ currentItem, items, setItems }) {
   };
 
   const handleSubmit = () => {
-    let indexOfEditedItem = -1;
-    for (let i = 0, length = items.length; i < length; ++i) {
-      if (items[i].id === currentItem.id) {
-        indexOfEditedItem = i;
-        break;
-      }
-    }
-    // edit the value of the item
-    items[indexOfEditedItem].title = titleFieldValue;
-    setItems([...items]);
+
+
+    let editedItem = {id : currentItem.id , title : titleFieldValue , finished : currentItem.finished , createdAt : currentItem.createdAt };
+
+    setItems([...(items.map(item => item.id === currentItem.id ? editedItem : item))]);
+
+
   };
 
   const handleClickOpen = () => {

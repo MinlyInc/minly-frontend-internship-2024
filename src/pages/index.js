@@ -18,8 +18,16 @@ export default function Index() {
 
   console.log('items : ', items);
   return (
-    <>
-      <div>
+    <div style={{ justifyContent: 'center' , display: 'flex', flexDirection: 'column', alignItems: 'center' , minHeight: '100vh'  }}>
+      <h1>TODO LIST</h1>
+      <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center' , gap:'430px' , paddingBottom: '12px'} }>
+        <PopupScreenForAddTask
+          placeholder={'Add Task'}
+          items={items}
+          setItems={setItems}
+        ></PopupScreenForAddTask>
+
+
         <DropDownList
           dropDownItems={dropDownItems}
           placeholder={'filter'}
@@ -28,25 +36,11 @@ export default function Index() {
         />
       </div>
 
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
 
-      <div>
-        <PopupScreenForAddTask
-          placeholder={'Add Task'}
-          items={items}
-          setItems={setItems}
-        ></PopupScreenForAddTask>
-      </div>
 
-      <br></br>
-      <br></br>
-
-      <div>
+      <div style={{backgroundColor : '#f1f3f5', borderRadius: '10px' , borderColor: 'white' , width:'40%'}} >
         <TodoContainer items={items} setItems={setItems} filter={filter} />
       </div>
-    </>
+    </div>
   );
 }

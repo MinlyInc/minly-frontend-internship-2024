@@ -10,14 +10,16 @@ const TodoItemActions = ({ currentItem, allItems, setAllItems }) => {
 
   return (
     <>
-      <IconButton aria-label="delete" size="large" onClick={() => deleteItem()}>
-        <DeleteIcon />
-      </IconButton>
       <EditTitleDialog
         currentItem={currentItem}
         items={allItems}
         setItems={setAllItems}
       />
+
+      <IconButton aria-label="delete" size="large" onClick={() => deleteItem()}>
+        <DeleteIcon />
+      </IconButton>
+
     </>
   );
 };

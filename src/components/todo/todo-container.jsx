@@ -23,13 +23,12 @@ const TodoContainer = ({ items, setItems, filter }) => {
     <div>
       {filteredItems &&
         filteredItems.map((item, index) => (
-          <div key={`todo-item-${index}`}>
+          <div key={`todo-item-${index}`} style={{borderRadius: '12px' , borderColor:'black' }}>
             <TodoItem
               item={item}
               setItems={setItems}
               allItems={items}
             ></TodoItem>
-            <br></br>
           </div>
         ))}
     </div>
