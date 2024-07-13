@@ -19,7 +19,6 @@ const TodoItemActions = ({ currentItem, allItems, setAllItems }) => {
       <IconButton aria-label="delete" size="large" onClick={() => deleteItem()}>
         <DeleteIcon />
       </IconButton>
-
     </>
   );
 };

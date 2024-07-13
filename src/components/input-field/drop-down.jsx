@@ -4,10 +4,14 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-export default function DropDownList({placeholder , dropDownItems , filter , setFilter}) {
-
+export default function DropDownList({
+  placeholder,
+  dropDownItems,
+  filter,
+  setFilter,
+}) {
   const handleChange = (event) => {
-    setFilter(event.target.value) ;
+    setFilter(event.target.value);
   };
 
   return (
@@ -20,13 +24,15 @@ export default function DropDownList({placeholder , dropDownItems , filter , set
         label="filteration"
         onChange={handleChange}
       >
-        <MenuItem key={`drop-down-item-none`} value={'none'}>None</MenuItem>
+        <MenuItem key={`drop-down-item-none`} value={'none'}>
+          None
+        </MenuItem>
 
-        {
-          dropDownItems.map( (dropDownItem , index) => (
-            <MenuItem key={`drop-down-item-${index}`} value={dropDownItem.value}>{dropDownItem.option}</MenuItem>
-          ))
-        }
+        {dropDownItems.map((dropDownItem, index) => (
+          <MenuItem key={`drop-down-item-${index}`} value={dropDownItem.value}>
+            {dropDownItem.option}
+          </MenuItem>
+        ))}
       </Select>
     </FormControl>
   );

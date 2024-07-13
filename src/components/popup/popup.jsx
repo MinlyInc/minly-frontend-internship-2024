@@ -3,7 +3,7 @@ import { Unstable_Popup as BasePopup } from '@mui/base/Unstable_Popup';
 import { styled } from '@mui/system';
 import AddItem from '../todo/add-item';
 
-export default function PopupScreenForAddTask({placeholder , ...restProps}) {
+export default function PopupScreenForAddTask({ placeholder, ...restProps }) {
   const [anchor, setAnchor] = React.useState(null);
 
   const handleClick = (event) => {
@@ -20,7 +20,7 @@ export default function PopupScreenForAddTask({placeholder , ...restProps}) {
       </Button>
       <BasePopup id={id} open={open} anchor={anchor}>
         <PopupBody>
-            <AddItem {...restProps}></AddItem>
+          <AddItem {...restProps}></AddItem>
         </PopupBody>
       </BasePopup>
     </div>
@@ -65,7 +65,7 @@ const PopupBody = styled('div')(
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: 0.875rem;
   z-index: 1;
-`,
+`
 );
 
 const Button = styled('button')(
@@ -82,7 +82,9 @@ const Button = styled('button')(
   cursor: pointer;
   border: 1px solid ${blue[500]};
   box-shadow: 0 2px 1px ${
-    theme.palette.mode === 'dark' ? 'rgba(0, 0, 0, 0.5)' : 'rgba(45, 45, 60, 0.2)'
+    theme.palette.mode === 'dark'
+      ? 'rgba(0, 0, 0, 0.5)'
+      : 'rgba(45, 45, 60, 0.2)'
   }, inset 0 1.5px 1px ${blue[400]}, inset 0 -2px 1px ${blue[600]};
 
   &:hover {
@@ -107,5 +109,5 @@ const Button = styled('button')(
       background-color: ${blue[500]};
     }
   }
-`,
+`
 );
