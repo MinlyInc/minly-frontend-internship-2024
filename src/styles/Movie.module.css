@@ -1,0 +1,27 @@
+
+
+.movieCardContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    flex: 0 0 calc(25% - 30px); /* 4 items per row, considering gap */
+}
+
+
+.movieCard{
+    border: 1px solid lightgray ;
+    border-radius: 8px;
+}
+
+.moviePoster{
+    margin: 1rem;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.movieText{
+    margin-left: 20px;
+}
+
+
