@@ -11,7 +11,7 @@ import DialogActions from '@mui/material/DialogActions';
 import Button from '@mui/material/Button';
 import BootstrapDialog from '@mui/material/Dialog';
 
-export default function EditTitleDialog({ currentItem, items, setItems }) {
+export default function EditTitleDialog({ currentItem, handleEditItem }) {
   const [open, setOpen] = useState(false);
 
   const [titleFieldValue, setTitleFieldValue] = useState(
@@ -20,19 +20,6 @@ export default function EditTitleDialog({ currentItem, items, setItems }) {
 
   const handleTitleTextFieldChange = (event) => {
     setTitleFieldValue(event.target.value);
-  };
-
-  const handleSubmit = () => {
-    let editedItem = {
-      id: currentItem.id,
-      title: titleFieldValue,
-      finished: currentItem.finished,
-      createdAt: currentItem.createdAt,
-    };
-
-    setItems([
-      ...items.map((item) => (item.id === currentItem.id ? editedItem : item)),
-    ]);
   };
 
   const handleClickOpen = () => {
@@ -89,7 +76,7 @@ export default function EditTitleDialog({ currentItem, items, setItems }) {
           <Button
             autoFocus
             onClick={() => {
-              handleSubmit();
+              handleEditItem(currentItem, titleFieldValue);
               handleClose();
             }}
           >

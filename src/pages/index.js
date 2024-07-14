@@ -16,6 +16,23 @@ export default function Index() {
   const [items, setItems] = useState(todoItems);
   const [filter, setFilter] = useState('none');
 
+  const handleEditItem = (currentItem, titleFieldValue) => {
+    let editedItem = {
+      id: currentItem.id,
+      title: titleFieldValue,
+      finished: currentItem.finished,
+      createdAt: currentItem.createdAt,
+    };
+
+    setItems([
+      ...items.map((item) => (item.id === currentItem.id ? editedItem : item)),
+    ]);
+  };
+
+  function handleDeleteItem(currentItem) {
+    setItems(items.filter((item) => item !== currentItem));
+  }
+
   console.log('items : ', items);
   return (
     <div
@@ -59,7 +76,12 @@ export default function Index() {
           width: '40%',
         }}
       >
-        <TodoContainer items={items} setItems={setItems} filter={filter} />
+        <TodoContainer
+          items={items}
+          filter={filter}
+          handleEditItem={handleEditItem}
+          handleDeleteItem={handleDeleteItem}
+        />
       </div>
     </div>
   );

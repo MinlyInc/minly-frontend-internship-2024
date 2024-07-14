@@ -3,11 +3,13 @@ import TodoItemInformation from './todo-item-information';
 import { memo } from 'react';
 
 function comparePrevPropWithNextProps(prevProps, nextProps) {
-  return false;
-  // return prevProps.item.title === nextProps.item.title && prevProps.item.id === nextProps.item.id;
+  return (
+    prevProps.item.title === nextProps.item.title &&
+    prevProps.item.id === nextProps.item.id
+  );
 }
 
-const TodoItem = ({ item, allItems, setItems }) => {
+const TodoItem = ({ item, handleEdit, handleDelete }) => {
   console.log('we are re-render this item', item);
   return (
     <div
@@ -25,8 +27,8 @@ const TodoItem = ({ item, allItems, setItems }) => {
       <div style={{ flexGrow: 1 }}></div>
       <TodoItemActions
         currentItem={item}
-        setAllItems={setItems}
-        allItems={allItems}
+        handleEdit={handleEdit}
+        handleDelete={handleDelete}
       />
     </div>
   );

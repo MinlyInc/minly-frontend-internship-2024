@@ -1,23 +1,24 @@
 import TodoItem from '@/components/todo/todo-item';
 import { FilterOption } from '@/enum/filter-option';
+import { useState } from 'react';
 
 function filterDataBasedOnOption(items, filter) {
-  let filteredItmes;
+  let filteredItems;
   switch (filter) {
     case FilterOption.FINISHED:
-      filteredItmes = items.filter((item) => item.finished === true);
+      filteredItems = items.filter((item) => item.finished === true);
       break;
     case FilterOption.NONE:
-      filteredItmes = items;
+      filteredItems = items;
       break;
     default:
-      filteredItmes = items;
+      filteredItems = items;
       break;
   }
-  return filteredItmes;
+  return filteredItems;
 }
 
-const TodoContainer = ({ items, setItems, filter }) => {
+const TodoContainer = ({ items, handleEditItem, handleDeleteItem, filter }) => {
   const filteredItems = filterDataBasedOnOption(items, filter);
   return (
     <div>
@@ -29,9 +30,9 @@ const TodoContainer = ({ items, setItems, filter }) => {
           >
             <TodoItem
               item={item}
-              setItems={setItems}
-              allItems={items}
-            ></TodoItem>
+              handleEdit={handleEditItem}
+              handleDelete={handleDeleteItem}
+            />
           </div>
         ))}
     </div>

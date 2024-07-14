@@ -3,20 +3,16 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 import EditTitleDialog from '@/components/dialog/edit-title-dialog';
 
-const TodoItemActions = ({ currentItem, allItems, setAllItems }) => {
-  function deleteItem() {
-    setAllItems(allItems.filter((item) => item !== currentItem));
-  }
-
+const TodoItemActions = ({ currentItem, handleEdit, handleDelete }) => {
   return (
     <>
-      <EditTitleDialog
-        currentItem={currentItem}
-        items={allItems}
-        setItems={setAllItems}
-      />
+      <EditTitleDialog currentItem={currentItem} handleEditItem={handleEdit} />
 
-      <IconButton aria-label="delete" size="large" onClick={() => deleteItem()}>
+      <IconButton
+        aria-label="delete"
+        size="large"
+        onClick={() => handleDelete(currentItem)}
+      >
         <DeleteIcon />
       </IconButton>
     </>
