@@ -11,6 +11,20 @@ const movies = [
   {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
   {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
   {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
+  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
+  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
+  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
+  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
+  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
+  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
+  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
+  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
+  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
+  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
+  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
+  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
+  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
+
 
 
 ]
@@ -19,8 +33,8 @@ const movies = [
 
 export default function Home() {
   return (
-    <>
-      <h2>all movies</h2>
+    <div >
+      <h2 style={{marginLeft: '8%' , marginTop: '8%'}}>All movies</h2>
 
 
       <div className={styles.movieCardContainer}>
@@ -29,6 +43,6 @@ export default function Home() {
         ))}
       </div>
 
-    </>
+    </div>
   );
 }
