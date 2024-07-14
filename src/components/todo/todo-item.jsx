@@ -9,8 +9,7 @@ function comparePrevPropWithNextProps(prevProps, nextProps) {
   );
 }
 
-const TodoItem = ({ item, handleEdit, handleDelete }) => {
-  console.log('we are re-render this item', item);
+const TodoItem = ({ item }) => {
   return (
     <div
       style={{
@@ -25,11 +24,7 @@ const TodoItem = ({ item, handleEdit, handleDelete }) => {
     >
       <TodoItemInformation item={item} />
       <div style={{ flexGrow: 1 }}></div>
-      <TodoItemActions
-        currentItem={item}
-        handleEdit={handleEdit}
-        handleDelete={handleDelete}
-      />
+      <TodoItemActions currentItem={item} />
     </div>
   );
 };

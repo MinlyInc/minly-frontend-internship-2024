@@ -1,6 +1,5 @@
 import TodoItem from '@/components/todo/todo-item';
 import { FilterOption } from '@/enum/filter-option';
-import { useState } from 'react';
 
 function filterDataBasedOnOption(items, filter) {
   let filteredItems;
@@ -18,7 +17,7 @@ function filterDataBasedOnOption(items, filter) {
   return filteredItems;
 }
 
-const TodoContainer = ({ items, handleEditItem, handleDeleteItem, filter }) => {
+const TodoContainer = ({ items, filter }) => {
   const filteredItems = filterDataBasedOnOption(items, filter);
   return (
     <div>
@@ -28,11 +27,7 @@ const TodoContainer = ({ items, handleEditItem, handleDeleteItem, filter }) => {
             key={`todo-item-${index}`}
             style={{ borderRadius: '12px', borderColor: 'black' }}
           >
-            <TodoItem
-              item={item}
-              handleEdit={handleEditItem}
-              handleDelete={handleDeleteItem}
-            />
+            <TodoItem item={item} />
           </div>
         ))}
     </div>

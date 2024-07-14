@@ -1,9 +1,11 @@
 import TodoContainer from '@/components/todo/todo-container';
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import PopupScreenForAddTask from '@/components/popup/popup';
 import DropDownList from '@/components/input-field/drop-down';
+import ItemContext, { ItemProvider } from '@/contexts/todo-context';
+import TodoContext from '@/contexts/todo-context';
 
-const todoItems = [
+export const todoItems = [
   { id: 1, title: 'i love react', createdAt: '2023-11-20', finished: false },
   { id: 2, title: 'i love next', createdAt: '2023-11-20', finished: false },
   { id: 3, title: 'i love nest', createdAt: '2023-11-20', finished: false },
@@ -12,28 +14,12 @@ const todoItems = [
 
 const dropDownItems = [{ value: 'completed', option: 'finished' }];
 
-export default function Index() {
-  const [items, setItems] = useState(todoItems);
+const Home = () => {
+  const { items, setItems } = useContext(TodoContext);
   const [filter, setFilter] = useState('none');
 
-  const handleEditItem = (currentItem, titleFieldValue) => {
-    let editedItem = {
-      id: currentItem.id,
-      title: titleFieldValue,
-      finished: currentItem.finished,
-      createdAt: currentItem.createdAt,
-    };
+  console.log(items);
 
-    setItems([
-      ...items.map((item) => (item.id === currentItem.id ? editedItem : item)),
-    ]);
-  };
-
-  function handleDeleteItem(currentItem) {
-    setItems(items.filter((item) => item !== currentItem));
-  }
-
-  console.log('items : ', items);
   return (
     <div
       style={{
@@ -76,13 +62,16 @@ export default function Index() {
           width: '40%',
         }}
       >
-        <TodoContainer
-          items={items}
-          filter={filter}
-          handleEditItem={handleEditItem}
-          handleDeleteItem={handleDeleteItem}
-        />
+        <TodoContainer items={items} filter={filter} />
       </div>
     </div>
+  );
+};
+
+export default function index() {
+  return (
+    <ItemProvider>
+      <Home />
+    </ItemProvider>
   );
 }
