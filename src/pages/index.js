@@ -1,7 +1,7 @@
 import TodoContainer from '@/components/todo/todo-container';
 import { useState, useContext, useEffect } from 'react';
-import PopupScreenForAddTask from '@/components/popup/popup';
-import DropDownList from '@/components/input-field/drop-down';
+import PopupScreenForAddTask from '@/components/popup/popup-for-add';
+import DropDownList from '@/components/input-fields/drop-down';
 import ItemContext, { ItemProvider } from '@/contexts/todo-context';
 import TodoContext from '@/contexts/todo-context';
 

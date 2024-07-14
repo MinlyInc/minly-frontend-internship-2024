@@ -9,7 +9,7 @@ const AddItem = ({ items, setItems }) => {
     setTitleFieldValue(event.target.value);
   };
 
-  const handleSubmit = () => {
+  const handleAddItem = () => {
     const currentDate = new Date();
     const year = currentDate.getFullYear();
     const month = String(currentDate.getMonth() + 1).padStart(2, '0');
@@ -50,7 +50,7 @@ const AddItem = ({ items, setItems }) => {
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <PrimaryButton
         placeholder={'add task'}
-        onClick={handleSubmit}
+        onClick={handleAddItem}
       ></PrimaryButton>
     </>
   );

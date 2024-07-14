@@ -9,7 +9,17 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import DialogActions from '@mui/material/DialogActions';
 import Button from '@mui/material/Button';
-import BootstrapDialog from '@mui/material/Dialog';
+import { styled } from '@mui/material/styles';
+import Dialog from '@mui/material/Dialog';
+
+const BootstrapDialog = styled(Dialog)(({ theme }) => ({
+  '& .MuiDialogContent-root': {
+    padding: theme.spacing(2),
+  },
+  '& .MuiDialogActions-root': {
+    padding: theme.spacing(1),
+  },
+}));
 
 export default function EditTitleDialog({ currentItem, handleEditItem }) {
   const [open, setOpen] = useState(false);
