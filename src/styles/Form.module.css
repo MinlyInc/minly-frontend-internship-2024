@@ -1,0 +1,44 @@
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.addButton {
+  background: #2f407c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin-right: 10px;
+  cursor: pointer;
+  flex: 0 1 150px;
+  height: 50px;
+}
+
+.inputContainer {
+  flex: 0.97;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.filterControl {
+  flex: 0 1 150px; 
+  margin-left: 10px;
+  background-color: #ddd;
+}
+
+.todoList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.todoList > div {
+  margin-bottom: 10px;
+}
