@@ -13,10 +13,10 @@ const MovieCard = ({ movie }) => {
       />
       <Box className={styles.movieDetails}>
         <Box className={styles.movieRating}>
-          <span>⭐</span> {movie.rating}
+          <span>⭐</span> {movie.average_rating}
         </Box>
         <h2 className={styles.movieTitle}>{movie.title}</h2>
-        <Box className={styles.movieYear}>{movie.year}</Box>
+        <Box className={styles.movieYear}>{movie.release_date}</Box>
       </Box>
     </Box>
   );
