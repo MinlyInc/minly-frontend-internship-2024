@@ -1,7 +1,13 @@
+import MovieList from '../components/MovieList';
+import styles from './index.module.css'
+
 export default function Home() {
   return (
     <>
-      Get started by editing src/pages/index.js
+      <div className={styles.index}>
+        <h1 className={styles.title}>All Movies</h1>
+        <MovieList />
+      </div>
     </>
   );
 }

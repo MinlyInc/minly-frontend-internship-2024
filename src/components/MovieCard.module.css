@@ -1,0 +1,45 @@
+/* src/components/MovieCard.module.css */
+
+.movieCard {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.movieCard:hover {
+  transform: scale(1.05);
+}
+
+.moviePoster {
+  width: 100%;
+  height: auto;
+}
+
+.movieDetails {
+  padding: 4px;
+  text-align: left;
+}
+
+.movieTitle {
+  font-size: 17.66px;
+  margin: 1px 0;
+  color: #1A2C59;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.movieRating {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  margin: 3px 0;
+  color:#1A2C59;
+  font-size: 16.56px;
+}
+
+.movieYear {
+  font-size: 15.46px;
+  color: #7C7C7C;
+}
