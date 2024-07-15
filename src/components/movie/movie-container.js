@@ -2,9 +2,11 @@ import styles from '@/styles/Movie.module.css';
 import MovieCard from '@/components/movie/movie-card';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { movies_end_point } from '@/constants/end-points';
 import { convertTimeStamptzToDateFormat } from '@/pages';
+import SortOptionsDropDown from '@/components/drop-down/drop-down';
+import * as React from 'react';
 
 let currentPage = 1;
 
@@ -30,14 +32,13 @@ async function fetchPaginatedData(page , sortBy){
 
 
 
-const MovieContainer = ({initialMovies , sortBy}) => {
+const MovieContainer = ({initialMovies }) => {
   const [movies, setMovies] = useState([...initialMovies]) ;
-
+  const [sortBy, setSortBy] = React.useState('none');
 
   useEffect(() => {
       handlePageChange('' , currentPage);
   }, [sortBy]);
-
 
   const handlePageChange = async (event , page) => {
     const currentPageMovieData = await fetchPaginatedData(page , sortBy) ;
@@ -47,15 +48,20 @@ const MovieContainer = ({initialMovies , sortBy}) => {
 
   return(
     <>
-      <h2 style={{ marginLeft: '8%', marginTop: '8%' }}>All movies</h2>
-      <div className={styles.movieCardContainer}>
+
+      <div className={styles.sortBy}>
+        <h2 >All movies</h2>
+        <SortOptionsDropDown setSortBy={setSortBy} sortBy={sortBy} />
+      </div>
+
+      <div className={styles.movieCardsContainer}>
         {movies.map((movie, index) => (
           <MovieCard movie={movie} key={`card-item-${index}`}></MovieCard>
         ))}
       </div>
 
-      <Stack spacing={2}>
-        <Pagination count={10} variant="outlined" shape="rounded" onChange={handlePageChange}  />
+      <Stack spacing={2} >
+        <Pagination className={styles.paginationBar} count={10} variant="outlined" shape="rounded" onChange={handlePageChange}   />
       </Stack>
     </>
   );

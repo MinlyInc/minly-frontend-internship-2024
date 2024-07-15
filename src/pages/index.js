@@ -30,12 +30,9 @@ export async function getServerSideProps() {
 
 
 export default function Home({movies}) {
-  const [sortBy, setSortBy] = React.useState('none');
-  console.log('sortBy', sortBy);
   return (
     <div>
-        <SortOptionsDropDown setSortBy={setSortBy} sortBy={sortBy} />
-        <MovieContainer initialMovies={movies} sortBy={sortBy} />
+        <MovieContainer initialMovies={movies} />
     </div>
   );
 }

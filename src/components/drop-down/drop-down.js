@@ -4,7 +4,6 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-
 const dropDownItems = [
   {option : 'Date' , value: 'releaseDate'},
   {option : 'Rating' , value: 'averageRating'},
@@ -18,7 +17,6 @@ export default function SortOptionsDropDown({sortBy , setSortBy}) {
 
   return (
     <div>
-
       <FormControl variant="filled" sx={{ m: 1, minWidth: 120 }}>
         <InputLabel id="demo-simple-select-filled-label">Age</InputLabel>
         <Select

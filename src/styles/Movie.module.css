@@ -3,7 +3,7 @@
     padding-bottom: 20px; /* To add some space at the bottom */
 }
 
-.movieCardContainer {
+.movieCardsContainer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(278px, 1fr)); /* Make columns responsive */
     gap: 20px; /* Space between grid items */
@@ -16,6 +16,7 @@
 .movieCard {
     border: 1px solid lightgray;
     border-radius: 8px;
+    box-shadow: 1px 1px 1px grey;
 }
 
 .movieCard img {
@@ -30,4 +31,20 @@
 .movieText {
     margin-top: 1rem;
     margin-left: 1rem;
+}
+
+.sortBy{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5%;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    padding-left: 8%;
+    padding-right: 17%;
+}
+
+.paginationBar{
+    justify-content: center;
+    display: flex;
+    padding-top: 4rem;
 }
