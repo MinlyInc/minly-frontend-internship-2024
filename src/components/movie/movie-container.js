@@ -31,18 +31,11 @@ async function fetchPaginatedData(page , sortBy){
 
 
 const MovieContainer = ({initialMovies , sortBy}) => {
-  const [isMounted, setIsMounted] = useState(false);
   const [movies, setMovies] = useState([...initialMovies]) ;
 
 
   useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (isMounted) {
       handlePageChange('' , currentPage);
-    }
   }, [sortBy]);
 
 
