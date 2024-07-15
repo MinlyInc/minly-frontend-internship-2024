@@ -1,27 +1,33 @@
-.movieCardContainer{
+.pageContainer {
+    background-color: lightgray; /* Light gray background */
+    padding-bottom: 20px; /* To add some space at the bottom */
+}
+
+.movieCardContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); /* Make columns responsive */
-    gap: 30px; /* Space between grid items */
+    grid-template-columns: repeat(auto-fit, minmax(278px, 1fr)); /* Make columns responsive */
+    gap: 20px; /* Space between grid items */
     margin-left: 8%;
     margin-right: 8%;
-
+    height: 464px;
     width: 75%;
 }
 
-.movieCard{
+.movieCard {
     border: 1px solid lightgray;
     border-radius: 8px;
 }
 
 .movieCard img {
-    margin: auto;
-    object-fit: cover;
-    width: 100%;
-    height: 350px;
-
+    margin-left: 6px;
+    margin-top: 6px;
+    object-fit: fill;
+    width: 256px;
+    height: 344px;
+    border-radius: 6px;
 }
 
-.movieText{
+.movieText {
     margin-top: 1rem;
     margin-left: 1rem;
 }

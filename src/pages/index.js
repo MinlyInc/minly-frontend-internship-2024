@@ -1,48 +1,38 @@
-import MovieCard from '@/components/movie/movie-card';
-import styles from '@/styles/Movie.module.css';
-
-
-const movies = [
-
-  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8 ,released_year: 2023},
-  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
-  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
-  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
-  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
-  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
-  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
-  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
-  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
-  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
-  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
-  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
-  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
-  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
-  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
-  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
-  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
-  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
-  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
-  {id: 1 , poster : '/test.png' , title: 'Meg 2' , average_rate: 8,released_year: 2023},
+import MovieContainer from '@/components/movie/movie-container';
+import { movies_end_point } from '@/constants/end-points';
 
 
 
-]
+
+export const convertTimeStamptzToDateFormat = (dateString) => {
+  const date = new Date(dateString);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+};
 
 
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const res = await fetch(movies_end_point);
+  const movies = await res.json();
 
-export default function Home() {
+  // Format the dates in the movies
+  const formattedMovies = movies.map(movie => ({
+    ...movie,
+    release_date: convertTimeStamptzToDateFormat(movie.release_date)
+  }));
+
+  // Pass data to the page via props
+  return { props: { movies: formattedMovies } };
+}
+
+
+export default function Home({movies}) {
   return (
-    <div >
-      <h2 style={{marginLeft: '8%' , marginTop: '8%'}}>All movies</h2>
-
-
-      <div className={styles.movieCardContainer}>
-        {movies.map((movie, index) => (
-          <MovieCard movie={movie} key={`card-item-${index}`}></MovieCard>
-        ))}
-      </div>
-
+    <div>
+        <MovieContainer initialMovies={movies}/>
     </div>
   );
 }
