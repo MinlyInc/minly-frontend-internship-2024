@@ -1,7 +1,7 @@
 import MovieContainer from '@/components/movie/movie-container';
 import { movies_end_point } from '@/constants/end-points';
-
-
+import * as React from 'react';
+import SortOptionsDropDown from '@/components/drop-down/drop-down';
 
 
 export const convertTimeStamptzToDateFormat = (dateString) => {
@@ -30,9 +30,12 @@ export async function getServerSideProps() {
 
 
 export default function Home({movies}) {
+  const [sortBy, setSortBy] = React.useState('none');
+  console.log('sortBy', sortBy);
   return (
     <div>
-        <MovieContainer initialMovies={movies}/>
+        <SortOptionsDropDown setSortBy={setSortBy} sortBy={sortBy} />
+        <MovieContainer initialMovies={movies} sortBy={sortBy} />
     </div>
   );
 }
