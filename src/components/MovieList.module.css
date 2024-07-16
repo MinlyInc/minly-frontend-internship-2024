@@ -1,8 +1,38 @@
+/* src/components/MovieList.module.css */
 .movieList {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 24px;
     padding: 20px;
-    justify-items: start;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .title {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  
+  .sortControl {
+    min-width: 235px;
+    width: 235px;
+    height: 40px;
+  }
+  
+  .sortControl .MuiOutlinedInput-root {
+    height: 100%;
+  }
+  
+  .sortControl .MuiSelect-select {
+    padding: 12px;
+  }
+  
+  .sortControl .MuiInputLabel-outlined {
+    top: -6px;
   }
   

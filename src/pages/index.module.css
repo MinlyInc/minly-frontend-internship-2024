@@ -9,5 +9,8 @@
     line-height: 36px;
     color: #003055;
     margin-bottom: 20px; /* Adjust this value as needed */
+    padding-left: 10px;
+    align-items: center;
+    justify-content: center;
   }
   

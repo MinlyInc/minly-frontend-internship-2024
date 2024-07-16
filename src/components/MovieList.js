@@ -1,26 +1,54 @@
 import React, { useEffect, useState } from 'react';
 import MovieCard from './MovieCard';
 import styles from './MovieList.module.css';
-import { Box } from '@mui/material';
+import { Box, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 import Pagination from './Pagination';
 
 const MovieList = () => {
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
   const [lastPage, setLastPage] = useState(1);
+  const [sort, setSortField] = useState('average_rating');
+  const [order, setSortOrder] = useState('desc');
 
   useEffect(() => {
-    fetch(`http://localhost:3001/movies?page=${page}`)
+    fetch(
+      `http://localhost:3001/movies?page=${page}&sort=${sort}&order=${order}`
+    )
       .then((response) => response.json())
       .then((data) => {
         setMovies(data.data);
         setLastPage(data.lastPage);
       })
       .catch((error) => console.error('Error fetching movies:', error));
-  }, [page]);
+  }, [page, sort, order]);
+
+  const handleSortChange = (event) => {
+    const [field, order] = event.target.value.split('-');
+    setSortField(field);
+    setSortOrder(order);
+  };
 
   return (
     <Box>
+      <Box className={styles.header}>
+        <h1 className={styles.title}>All Movies</h1>
+        <FormControl variant="outlined" className={styles.sortControl}>
+          <InputLabel>Sort by</InputLabel>
+          <Select
+            value={`${sort}-${order}`}
+            onChange={handleSortChange}
+            label="Sort by"
+          >
+            <MenuItem value="release_date-asc">Release Date Ascending</MenuItem>
+            <MenuItem value="release_date-desc">
+              Release Date Descending
+            </MenuItem>
+            <MenuItem value="average_rating-asc">Rating Ascending</MenuItem>
+            <MenuItem value="average_rating-desc">Rating Descending</MenuItem>
+          </Select>
+        </FormControl>
+      </Box>
       <Box className={styles.movieList}>
         {movies.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />
