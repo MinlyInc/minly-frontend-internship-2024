@@ -2,9 +2,20 @@ import styles from '@/styles/Movie.module.css';
 import StarIcon from '@mui/icons-material/Star';
 
 
+
+
 const MovieCard = ({ movie }) => {
+
+
+
+  const handleCardClick = () => {
+    console.log('CLICKED')
+    window.location.href = `/movie/${movie.uuid}`;
+  }
+
+
   return (
-    <div className={styles.movieCard}>
+    <div className={styles.movieCard} onClick={handleCardClick}>
       <div style={{marginTop: '13px' , marginRight: '13px' , marginLeft: '13px'}} >
         <img
           src={movie.poster}
