@@ -7,9 +7,7 @@ import StarIcon from '@mui/icons-material/Star';
 const MovieCard = ({ movie }) => {
 
 
-
   const handleCardClick = () => {
-    console.log('CLICKED')
     window.location.href = `/movie/${movie.uuid}`;
   }
 
