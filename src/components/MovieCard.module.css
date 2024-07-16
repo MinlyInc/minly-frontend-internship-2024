@@ -44,3 +44,8 @@
   font-size: 15.46px;
   color: #7C7C7C;
 }
+
+.movieLink {
+  text-decoration: none;
+  color: inherit;
+}

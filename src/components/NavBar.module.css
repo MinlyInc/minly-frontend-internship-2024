@@ -1,11 +1,15 @@
 .navbar {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 8px;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
   }
   
   .logo {
     font-family: 'Rubik', sans-serif;
+    margin-left: 190px;
     font-weight: 700;
     font-size: 26.76px;
     line-height: 31.72px;

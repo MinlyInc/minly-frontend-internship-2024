@@ -4,7 +4,7 @@ import styles from './MovieList.module.css';
 import { Box, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 import Pagination from './Pagination';
 
-const MovieList = () => {
+const MovieList = ({searchResults}) => {
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
   const [lastPage, setLastPage] = useState(1);
@@ -12,16 +12,20 @@ const MovieList = () => {
   const [order, setSortOrder] = useState('desc');
 
   useEffect(() => {
-    fetch(
-      `http://localhost:3001/movies?page=${page}&sort=${sort}&order=${order}`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setMovies(data.data);
-        setLastPage(data.lastPage);
-      })
-      .catch((error) => console.error('Error fetching movies:', error));
-  }, [page, sort, order]);
+    if (searchResults) {
+      setMovies(searchResults);
+    } else {
+      fetch(
+        `http://localhost:3001/movies?page=${page}&sort=${sort}&order=${order}`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          setMovies(data.data);
+          setLastPage(data.lastPage);
+        })
+        .catch((error) => console.error('Error fetching movies:', error));
+    }
+  }, [page, sort, order, searchResults]);
 
   const handleSortChange = (event) => {
     const [field, order] = event.target.value.split('-');
@@ -54,7 +58,9 @@ const MovieList = () => {
           <MovieCard key={movie.id} movie={movie} />
         ))}
       </Box>
+      {!searchResults &&(
       <Pagination page={page} lastPage={lastPage} setPage={setPage} />
+      )}
     </Box>
   );
 };

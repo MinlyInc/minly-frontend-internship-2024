@@ -1,10 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './NavBar.module.css';
+import { Box, InputBase, IconButton } from '@mui/material';
 
-const NavBar = () => {
+const NavBar = ({ onSearch }) => {
+  const [search, setSearchQuery] = useState('');
+
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    fetch(`http://localhost:3001/movies?search=${search}`)
+      .then((response) => response.json())
+      .then((data) => {
+        onSearch(data.data);
+      })
+      .catch((error) => console.error('Error fetching search results:', error));
+  };
+
   return (
     <div className={styles.navbar}>
-      <span className={styles.logo}>MMDB</span>
+      <Box className={styles.logo}>MMDB</Box>
+      <Box
+        component="form"
+        onSubmit={handleSearchSubmit}
+        className={styles.searchContainer}
+      >
+        <InputBase
+          placeholder="Search…"
+          classes={{
+            root: styles.inputRoot,
+            input: styles.inputInput,
+          }}
+          inputProps={{ 'aria-label': 'search' }}
+          value={search}
+          onChange={handleSearchChange}
+        />
+      </Box>
     </div>
   );
 };
