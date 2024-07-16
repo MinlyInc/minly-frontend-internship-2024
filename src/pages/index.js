@@ -1,7 +1,6 @@
 import MovieContainer from '@/components/movie/movie-container';
 import { movies_end_point } from '@/constants/end-points';
 import * as React from 'react';
-import SortOptionsDropDown from '@/components/drop-down/drop-down';
 
 
 export const convertTimeStamptzToYear = (dateString) => {
@@ -15,26 +14,24 @@ export const convertTimeStamptzToYear = (dateString) => {
 
 
 export async function getServerSideProps() {
-  // Fetch data from external API
   const res = await fetch(movies_end_point);
   const parsedJson = await res.json();
 
   console.log(parsedJson);
-  // Format the dates in the movies
+
   const formattedMovies = parsedJson.movies.map(movie => ({
     ...movie,
     release_date: convertTimeStamptzToYear(movie.release_date)
   }));
 
-  // Pass data to the page via props
-  return { props: { movies: formattedMovies } };
+  return { props: { movies: formattedMovies , totalNumberOfPages: parsedJson.totalNumberOfPages } };
 }
 
 
-export default function Home({movies}) {
+export default function Home({movies , totalNumberOfPages}) {
   return (
     <div>
-        <MovieContainer initialMovies={movies} />
+        <MovieContainer initialMovies={movies}  initTotalNumberOfPages={totalNumberOfPages}/>
     </div>
   );
 }

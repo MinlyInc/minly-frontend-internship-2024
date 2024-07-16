@@ -9,6 +9,8 @@ import * as React from 'react';
 
 let currentPage = 1;
 
+
+
 async function fetchPaginatedData(page , sortBy){
   const offset = ((page - 1) * 10) + 1;
   console.log(`${movies_end_point}?offset=${offset}&sortBy=${sortBy}`);
@@ -21,31 +23,35 @@ async function fetchPaginatedData(page , sortBy){
     }
   );
   const parsedJson = await res.json();
+
   console.log(parsedJson);
+
   const formattedMovies = parsedJson.movies.map(movie => ({
     ...movie,
     release_date: convertTimeStamptzToYear(movie.release_date)
   }));
 
-  console.log(formattedMovies);
-
-  return  formattedMovies ;
+  return { movies : formattedMovies , totalNumberOfPages : parsedJson.totalNumberOfPages - 1 } ;
 }
 
-
-
-const MovieContainer = ({initialMovies }) => {
+const MovieContainer = ({initialMovies , initTotalNumberOfPages }) => {
   const [movies, setMovies] = useState([...initialMovies]) ;
   const [sortBy, setSortBy] = useState('none');
+  const [totalNumberOfPagesForPagination , setTotalNumberOfPagesForPagination] = useState(initTotalNumberOfPages - 1);
 
-  useEffect(() => {
+
+  console.log('re-rendered again')
+
+  useEffect( () => {
       handlePageChange('' , currentPage);
   }, [sortBy]);
 
+
   const handlePageChange = async (event , page) => {
-    const currentPageMovieData = await fetchPaginatedData(page , sortBy) ;
+    let { movies , totalNumberOfPages } = await fetchPaginatedData(page , sortBy) ;
     currentPage = page;
-    setMovies([...currentPageMovieData]);
+    setTotalNumberOfPagesForPagination(totalNumberOfPages);
+    setMovies([...movies]);
   }
 
   return(
@@ -63,12 +69,11 @@ const MovieContainer = ({initialMovies }) => {
       </div>
 
       <div className={styles.paginationBar} >
-        <Pagination count={8} variant="outlined" shape="rounded" onChange={handlePageChange}   />
+        <Pagination count={totalNumberOfPagesForPagination} variant="outlined" shape="rounded" onChange={handlePageChange}   />
       </div>
 
     </>
   );
 }
-
 
 export default MovieContainer;

@@ -14,8 +14,9 @@ const MovieCard = ({ movie }) => {
       <div className={styles.movieInformation}>
         <StarIcon sx={{ width: '20px', height: '20px', color: 'orange' }}></StarIcon>
         {movie.average_rating}
-        <div className={styles.movieText}>
+        <div>
           {movie.title}
+          <br/>
           {movie.release_date}
         </div>
       </div>
