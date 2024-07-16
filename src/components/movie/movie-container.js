@@ -1,10 +1,9 @@
 import styles from '@/styles/Movie.module.css';
 import MovieCard from '@/components/movie/movie-card';
 import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
 import { useEffect, useState } from 'react';
 import { movies_end_point } from '@/constants/end-points';
-import { convertTimeStamptzToDateFormat } from '@/pages';
+import {  convertTimeStamptzToYear } from '@/pages';
 import SortOptionsDropDown from '@/components/drop-down/drop-down';
 import * as React from 'react';
 
@@ -21,11 +20,14 @@ async function fetchPaginatedData(page , sortBy){
       },
     }
   );
-  const movies = await res.json();
-  const formattedMovies = movies.map(movie => ({
+  const parsedJson = await res.json();
+  console.log(parsedJson);
+  const formattedMovies = parsedJson.movies.map(movie => ({
     ...movie,
-    release_date: convertTimeStamptzToDateFormat(movie.release_date)
+    release_date: convertTimeStamptzToYear(movie.release_date)
   }));
+
+  console.log(formattedMovies);
 
   return  formattedMovies ;
 }
@@ -34,7 +36,7 @@ async function fetchPaginatedData(page , sortBy){
 
 const MovieContainer = ({initialMovies }) => {
   const [movies, setMovies] = useState([...initialMovies]) ;
-  const [sortBy, setSortBy] = React.useState('none');
+  const [sortBy, setSortBy] = useState('none');
 
   useEffect(() => {
       handlePageChange('' , currentPage);
@@ -60,9 +62,10 @@ const MovieContainer = ({initialMovies }) => {
         ))}
       </div>
 
-      <Stack spacing={2} >
-        <Pagination className={styles.paginationBar} count={10} variant="outlined" shape="rounded" onChange={handlePageChange}   />
-      </Stack>
+      <div className={styles.paginationBar} >
+        <Pagination count={8} variant="outlined" shape="rounded" onChange={handlePageChange}   />
+      </div>
+
     </>
   );
 }

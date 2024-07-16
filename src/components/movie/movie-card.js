@@ -11,13 +11,13 @@ const MovieCard = ({ movie }) => {
           alt="no image"
         />
       </div>
-      <div className={styles.movieText}>
+      <div className={styles.movieInformation}>
         <StarIcon sx={{ width: '20px', height: '20px', color: 'orange' }}></StarIcon>
         {movie.average_rating}
-        <br />
-        {movie.title}
-        <br />
-        {movie.release_date}
+        <div className={styles.movieText}>
+          {movie.title}
+          {movie.release_date}
+        </div>
       </div>
     </div>
   );
