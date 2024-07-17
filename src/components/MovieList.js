@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Grid, Pagination } from '@mui/material';
+import { Grid, Pagination, Box } from '@mui/material';
 import Movie from './Movie';
 
 const MovieList = ({ movies, page, setPage, totalMovies, loading }) => {
@@ -9,12 +9,8 @@ const MovieList = ({ movies, page, setPage, totalMovies, loading }) => {
     setPage(value);
   };
 
-  if (movies.length === 0) {
-    return <div>loading...</div>; 
-  }
-
   if (!Array.isArray(movies) || movies.length === 0) {
-    return <div>No movies found.</div>;
+    return <Box sx={{ textAlign: 'center', fontWeight: 'bold' }}>No movies found</Box>;
   }
   
   return (

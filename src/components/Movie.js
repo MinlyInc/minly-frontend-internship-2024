@@ -8,7 +8,14 @@ const starIcon = '/images/starIcon.jpg';
 
 return (
   <Link href={`/movie/${movie.id}`} passHref>
-    <Card sx={{ cursor: 'pointer' }}>
+    <Card sx={{ 
+      cursor: 'pointer',
+      transition: 'transform 0.3s, box-shadow 0.3s',
+          '&:hover': {
+            transform: 'scale(1.07)',
+            boxShadow: '0 6px 12px rgba(0,0,0,0.2)'
+          },
+     }}>
       <CardMedia
         component="img"
         height="344"
