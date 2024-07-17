@@ -9,8 +9,6 @@ import * as React from 'react';
 
 let currentPage = 1;
 
-
-
 async function fetchPaginatedData(page , sortBy){
   const offset = ((page - 1) * 10) + 1;
   console.log(`${movies_end_point}?offset=${offset}&sortBy=${sortBy}`);
@@ -24,8 +22,6 @@ async function fetchPaginatedData(page , sortBy){
   );
   const parsedJson = await res.json();
 
-  console.log(parsedJson);
-
   const formattedMovies = parsedJson.movies.map(movie => ({
     ...movie,
     release_date: convertTimeStamptzToYear(movie.release_date)
@@ -38,9 +34,6 @@ const MovieContainer = ({initialMovies , initTotalNumberOfPages }) => {
   const [movies, setMovies] = useState([...initialMovies]) ;
   const [sortBy, setSortBy] = useState('none');
   const [totalNumberOfPagesForPagination , setTotalNumberOfPagesForPagination] = useState(initTotalNumberOfPages - 1);
-
-
-  console.log('re-rendered again')
 
   useEffect( () => {
       handlePageChange('' , currentPage);
