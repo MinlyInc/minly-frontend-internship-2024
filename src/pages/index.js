@@ -5,20 +5,40 @@ import { Box, Typography, FormControl, InputLabel, Select, MenuItem } from '@mui
 const Home = () => {
   const [movies, setMovies] = useState([]);
   const [filter, setFilter] = useState('all');
+  const [page, setPage] = useState(1);
+  const [totalMovies, setTotalMovies] = useState(0);
+  const [loading, setLoading] = useState(true);
+  
 
   useEffect(() => {
     fetchMovies();
-  }, [filter]);
+  }, [filter, page]);
+
+  // useEffect(() => {
+  //   fetch(`http://localhost:3001/movie?page=${page}`)
+  //     .then(response => response.json())
+  //     .then(data => setMovies(data))
+  //     .catch(error => console.error('Error fetching movies:', error));
+  // }, [page]);
 
   const handleFilterChange = (event) => {
     setFilter(event.target.value);
+    setPage(1);
   };
 
   const fetchMovies = () => {
-    fetch(`http://localhost:3001/movie?filter=${filter}`)
+    setLoading(true);
+    fetch(`http://localhost:3001/movie?filter=${filter}&page=${page}&limit=8`)
       .then(response => response.json())
-      .then(data => setMovies(data))
-      .catch(error => console.error('Error fetching movies:', error));
+      .then(data => {
+        setMovies(data.data || []);
+        setTotalMovies(data.total || 0);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error('Error fetching movies:', error);
+        setLoading(false);
+      });
   };
 
   return (
@@ -43,7 +63,7 @@ const Home = () => {
       </FormControl>
     </Box>
 
-      <MovieList movies={movies} />
+      <MovieList movies={movies} page={page} setPage={setPage} totalMovies={totalMovies} />
       
    </Box>
   );
