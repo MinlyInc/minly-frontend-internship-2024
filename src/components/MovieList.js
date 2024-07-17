@@ -4,7 +4,6 @@ import styles from './MovieList.module.css';
 import { Box, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 import Pagination from './Pagination';
 
-
 const MovieList = ({ searchResults }) => {
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
@@ -28,8 +27,7 @@ const MovieList = ({ searchResults }) => {
     }
   }, [page, sort, order, searchResults]);
 
-  const handleSortChange = (event) => {
-    const [field, order] = event.target.value.split('-');
+  const handleSortChange = (field, order) => {
     setSortField(field);
     setSortOrder(order);
   };
@@ -42,7 +40,13 @@ const MovieList = ({ searchResults }) => {
           <InputLabel>Sort by</InputLabel>
           <Select
             value={`${sort}-${order}`}
-            onChange={handleSortChange}
+            onChange={(event) => {
+              console.log(event.target.value);
+              handleSortChange(
+                event.target.value.split('-')[0],
+                event.target.value.split('-')[1]
+              );
+            }}
             label="Sort by"
           >
             <MenuItem value="release_date-asc">Release Date Ascending</MenuItem>
