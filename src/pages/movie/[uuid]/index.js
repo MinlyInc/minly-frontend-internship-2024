@@ -6,7 +6,6 @@ import MovieInformation from '@/components/movie/movie-information';
 import CastContainer from '@/components/cast/cast-container';
 
 const fetchMovieDetailsData = async (uuid) => {
-  console.log('uuid in function fetching : ' , uuid);
   console.log(movie_details_end_point(uuid))
   const res = await fetch(
     `${movie_details_end_point(uuid)}`, {
@@ -26,13 +25,11 @@ const MovieDetailsPage = () => {
   const router = useRouter();
   const { uuid } = router.query;
 
-  console.log('uuid in page route : ' , uuid)
 
   const [movieDetails, setMovieDetails] = useState(null);
 
 
   useEffect( () => {
-    console.log('uuid in the hook : ' , uuid) ;
     if(uuid){
         fetchMovieDetailsData(uuid).then(data => setMovieDetails(data));
     }
@@ -58,14 +55,14 @@ const MovieDetailsPage = () => {
         <div>
           <h3>Overview</h3>
           <br/>
-          <div style={{ display: 'flex', flexDirection: 'row' , paddingBottom: '1rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'row' , paddingBottom: '1rem' , alignItems: 'center' }}>
             <text style={{ fontWeight: '700' }}>Director:</text>
             &nbsp;
             <text>{movieDetails.director.name}</text>
           </div>
 
 
-          <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <div style={{ display: 'flex', flexDirection: 'row' ,alignItems: 'center' }}>
             <text style={{ fontWeight: '700' }}>Language:</text>
             &nbsp;
             {/*<text>{movieDetails.language.name}</text>*/}
