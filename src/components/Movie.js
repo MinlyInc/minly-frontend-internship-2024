@@ -18,11 +18,11 @@ return (
      }}>
       <CardMedia
         component="img"
-        height="344"
-        width = "256"
+        height="464"
+        width = "278"
         image={movie.poster}
         alt={movie.title}
-        sx={{ objectFit: 'cover', margin: '2px' }}
+        sx={{ objectFit: 'cover', margin: '0px' }}
       />
 
      <CardContent sx={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>

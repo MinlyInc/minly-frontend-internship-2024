@@ -46,16 +46,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const Header = ({ handleSearch }) => {
-  return (
-    <Box sx={{  maxWidth: 1200, mx: 'auto', my: 4, mt: 12 }}>    
-    <AppBar sx={{ backgroundColor: '#ffffff', color: 'white' }}>
+  return (  
+    <AppBar sx={{ backgroundColor: '#ffffff', color: 'white', height: '80px' }}>
       <Toolbar>
-        <Typography variant="h6" component="div" sx={{ color: '#418CFB', flexGrow: 0.05, marginLeft: '110px', fontWeight: 'bold' }}>
+        <Typography variant="h5" component="div" sx={{ color: '#418CFB', flexGrow: 0.05, marginLeft: '150px',  fontWeight: 'bold' }}>
           MMDB
         </Typography>
         <Button color="inherit" sx={{ color: 'black', fontWeight: 'bold' }}>Home</Button>
         <Box sx={{ flexGrow: 1 }} />
-        <Search sx={{ marginRight: '110px' }}>
+        <Search sx={{ marginRight: '150px' }}>
           <SearchIconWrapper>
             <SearchIcon />
           </SearchIconWrapper>
@@ -67,7 +66,6 @@ const Header = ({ handleSearch }) => {
         </Search>
       </Toolbar>
     </AppBar>
-    </Box>
 
   );
 };

@@ -10,7 +10,7 @@ const MovieList = ({ movies, page, setPage, totalMovies, loading }) => {
   };
 
   if (!Array.isArray(movies) || movies.length === 0) {
-    return <Box sx={{ textAlign: 'center', fontWeight: 'bold' }}>No movies found</Box>;
+    return <Box sx={{ textAlign: 'center', fontWeight: 'bold', mb:50, mt: 10 }}>No movies found</Box>;
   }
   
   return (
@@ -23,7 +23,9 @@ const MovieList = ({ movies, page, setPage, totalMovies, loading }) => {
         ))}
       </Grid>
       <Pagination
+        sx={{mb: 2}}
         count={Math.ceil(totalMovies  / moviesPerPage)}
+        shape ="rounded"
         page={page}
         onChange={handleChangePage}
         color="primary"

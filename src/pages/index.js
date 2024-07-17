@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import MovieList from '../components/MovieList';
 import Header from '../components/Header'
+import Footer from '../components/Footer'
+
 import { Box, Typography, FormControl, InputLabel, Select, MenuItem, AppBar } from '@mui/material';
 
 const Home = () => {
@@ -50,8 +52,8 @@ const Home = () => {
   return (
    <div>
    <Header handleSearch={handleSearch} />
-    <Box sx={{  maxWidth: 1200, mx: 'auto', my: 4, mt: 12 }}>
-      <Typography variant="h4" component="h1" gutterBottom sx={{ fontSize: '24px', fontWeight: 600, lineHeight: '36px', textAlign: 'left' }}>
+    <Box sx={{  padding: '0 160px', mt: 15 }}>
+      <Typography variant="h4" component="h1"  sx={{ fontSize: '24px', fontWeight: 600, lineHeight: '36px', textAlign: 'left' }}>
         All movies
        </Typography>
       
@@ -85,6 +87,7 @@ const Home = () => {
 
       <MovieList movies={movies} page={page} setPage={setPage} totalMovies={totalMovies} />
     </Box>
+    <Footer />
    </div>
 
   );
