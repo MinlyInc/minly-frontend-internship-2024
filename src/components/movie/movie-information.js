@@ -11,9 +11,8 @@ const MovieInformation = ({ movie , categories}) => {
         <text style={{color: 'gray' , fontSize: '24px' , marginLeft: '8px' , fontWeight: '400'}}> ({convertTimeStamptzToYear(movie.release_date)})</text>
       </div>
 
-
       <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
-        <StarIcon sx={{ width: '20px', height: '20px', color: 'orange' }}></StarIcon>
+        <StarIcon sx={{  color: 'orange' }}></StarIcon>
         <text style={{color: '#418CFB'}}>{movie.average_rating}</text>
       </div>
 

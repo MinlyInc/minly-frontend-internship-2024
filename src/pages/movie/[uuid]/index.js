@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import styles from '@/styles/Movie.module.css';
 import MovieInformation from '@/components/movie/movie-information';
+import CastContainer from '@/components/cast/cast-container';
 
 const fetchMovieDetailsData = async (uuid) => {
   console.log('uuid in function fetching : ' , uuid);
@@ -75,7 +76,7 @@ const MovieDetailsPage = () => {
 
         <div>
           <h3>Cast</h3>
-
+          <CastContainer actors={movieDetails.actors}></CastContainer>
         </div>
 
       </div> : <></>
