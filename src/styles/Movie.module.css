@@ -56,3 +56,33 @@
     padding-bottom: 4rem;
     align-items: center;
 }
+
+
+.movieDetailsContainer{
+    margin-right: 11%;
+    margin-left: 11%;
+    border-radius: 12px;
+    border: 1px solid lightgray;
+    margin-top: 9%;
+    padding: 32px;
+
+}
+
+.mediaContainer{
+    display: flex;
+    flex-direction: row;
+    gap:30px;
+}
+
+.mediaContainer img{
+    border-radius: 12px;
+    aspect-ratio: 1 / 1.35;
+
+}
+
+.mediaContainer video{
+    border-radius: 12px;
+    aspect-ratio: 1 / 0.54;
+    min-width: 19%;
+}
+
