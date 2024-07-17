@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './NavBar.module.css';
 import { Box, InputBase, IconButton } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
 
 const NavBar = ({ onSearch }) => {
   const [search, setSearchQuery] = useState('');
@@ -14,7 +15,7 @@ const NavBar = ({ onSearch }) => {
     fetch(`http://localhost:3001/movies?search=${search}`)
       .then((response) => response.json())
       .then((data) => {
-        onSearch(data.data);
+        onSearch(data);
       })
       .catch((error) => console.error('Error fetching search results:', error));
   };
@@ -27,19 +28,26 @@ const NavBar = ({ onSearch }) => {
         onSubmit={handleSearchSubmit}
         className={styles.searchContainer}
       >
-        <InputBase
-          placeholder="Search…"
-          classes={{
-            root: styles.inputRoot,
-            input: styles.inputInput,
-          }}
-          inputProps={{ 'aria-label': 'search' }}
-          value={search}
-          onChange={handleSearchChange}
-        />
+        <Box>
+          <SearchIcon
+            style={{
+              height: 20,
+              width: 20,
+              marginRight: 370,
+            }}
+          />
+          <InputBase
+            placeholder="Search…"
+            style={{
+              right: 350,
+            }}
+            inputProps={{ 'aria-label': 'search' }}
+            value={search}
+            onChange={handleSearchChange}
+          />
+        </Box>
       </Box>
     </div>
   );
 };
-
 export default NavBar;

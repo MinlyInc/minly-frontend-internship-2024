@@ -4,7 +4,8 @@ import styles from './MovieList.module.css';
 import { Box, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 import Pagination from './Pagination';
 
-const MovieList = ({searchResults}) => {
+
+const MovieList = ({ searchResults }) => {
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
   const [lastPage, setLastPage] = useState(1);
@@ -36,7 +37,7 @@ const MovieList = ({searchResults}) => {
   return (
     <Box>
       <Box className={styles.header}>
-        <h1 className={styles.title}>All Movies</h1>
+        <h1>All Movies</h1>
         <FormControl variant="outlined" className={styles.sortControl}>
           <InputLabel>Sort by</InputLabel>
           <Select
@@ -58,8 +59,8 @@ const MovieList = ({searchResults}) => {
           <MovieCard key={movie.id} movie={movie} />
         ))}
       </Box>
-      {!searchResults &&(
-      <Pagination page={page} lastPage={lastPage} setPage={setPage} />
+      {!searchResults && (
+        <Pagination page={page} lastPage={lastPage} setPage={setPage} />
       )}
     </Box>
   );
