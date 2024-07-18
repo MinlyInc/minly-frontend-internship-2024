@@ -32,6 +32,12 @@
 .actorName{
     font-weight: 600;
     font-size: 14px;
-    width: 100px;
     height: 17px;
+    margin-bottom: 6px;
+}
+
+.actorCharacter{
+    height: 15px;
+    font-weight: 400;
+    color: #697586;
 }
