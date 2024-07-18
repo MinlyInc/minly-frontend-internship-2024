@@ -79,13 +79,11 @@
 
 .mediaContainer img{
     border-radius: 12px;
-    aspect-ratio: 1 / 1.35;
-
+    min-width: 26%;
 }
 
 .mediaContainer video{
     border-radius: 12px;
-    aspect-ratio: 1 / 0.54;
-    min-width: 19%;
+    min-width: 53%;
 }
 

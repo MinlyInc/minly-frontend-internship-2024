@@ -3,7 +3,7 @@
     display: grid;
     gap: 18px;
     height: auto;
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
 }
 
 .castCard{
@@ -11,7 +11,6 @@
     flex-direction: row;
     align-items: center;
     height: 74px;
-    min-width: 225px;
     border-radius: 10px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 
