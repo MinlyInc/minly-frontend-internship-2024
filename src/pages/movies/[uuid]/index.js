@@ -54,21 +54,21 @@ const MovieDetailsPage = () => {
             {movieDetails.movie.overview}
           </p>
           <br />
-          <div style={{ display: 'flex', flexDirection: 'row', marginBottom: '12px', alignItems: 'center' }}>
+          <div  className={styles.movieProperty}>
             <text style={{ fontWeight: '700' }}>Director:</text>
             &nbsp;
             <text>{movieDetails.director.name}</text>
           </div>
 
 
-          <div style={{ display: 'flex', flexDirection: 'row', marginBottom: '12px', alignItems: 'center' }}>
+          <div  className={styles.movieProperty}>
             <text style={{ fontWeight: '700' }}>Writer:</text>
             &nbsp;
             <text>{movieDetails.writers.map((writer, index) => ( index === movieDetails.writers.length - 1  ? writer.name : writer.name + ', '  ) )}</text>
           </div>
 
 
-          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+          <div className={styles.movieProperty}>
             <text style={{ fontWeight: '700' }}>Language:</text>
             &nbsp;
             <text>{movieDetails.language.name}</text>

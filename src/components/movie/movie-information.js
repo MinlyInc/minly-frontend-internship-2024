@@ -1,5 +1,6 @@
 import StarIcon from '@mui/icons-material/Star';
 import { convertTimeStamptzToYear } from '@/pages';
+import styles from '@/styles/Movie.module.css';
 
 
 const MovieInformation = ({ movie , categories}) => {

@@ -87,3 +87,12 @@
     min-width: 53%;
 }
 
+
+.movieProperty{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+
