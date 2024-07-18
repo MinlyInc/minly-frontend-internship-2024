@@ -32,15 +32,19 @@ const MovieDetailsPage = () => {
     }
   }, [uuid]);
 
+  // img for testing
+  // "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqh-F1aHLGeWstYhwN9LASD5AwGbgOE07W8Q&s"
+  // video for testing
+  // "https://imdb-video.media-imdb.com/vi2821244441/1434659607842-pgv4ql-1720050843612.mp4?Expires=1721382606&Signature=M2QWBXAuupnG-cy5NmwEnI3OnXC83iYtmeQ7hdDUpHIVg7T4CPusPnd54flrhMJ8YfaqFfE2q4VfIwojL55pPWIWP8XcoZNwO69m2h3gNZXLQL-X2TbNQAqAHHdyaKMqoYRGnOvfWNCE4ZRDJrveCXRePoTuyiRaQA-gcd8Gc2NiQkENQZna4iigwAdpv3jYWtf-0PlesuMxuZRi4zRaMr5r3EpHNngzdHjsTfkOftbseAsfzf9zrlC0nJ9oyFJf5MRY2DMRixEFkSu43Y0kXu-4Q1QmFL7qHKx4rE42fFVzgNhCVnS~B3eCCwYXNdJ9hxs0PGZuZzbS6OFVJ7IjCw__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA"
   return (
     movieDetails ?
       <div className={styles.movieDetailsContainer}>
 
         <div className={styles.mediaContainer}>
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqh-F1aHLGeWstYhwN9LASD5AwGbgOE07W8Q&s"
+          <img src={movieDetails.movie.poster}
                alt="Girl in a jacket" />
           <video controls autoPlay >
-            <source src="https://imdb-video.media-imdb.com/vi2821244441/1434659607842-pgv4ql-1720050843612.mp4?Expires=1721382606&Signature=M2QWBXAuupnG-cy5NmwEnI3OnXC83iYtmeQ7hdDUpHIVg7T4CPusPnd54flrhMJ8YfaqFfE2q4VfIwojL55pPWIWP8XcoZNwO69m2h3gNZXLQL-X2TbNQAqAHHdyaKMqoYRGnOvfWNCE4ZRDJrveCXRePoTuyiRaQA-gcd8Gc2NiQkENQZna4iigwAdpv3jYWtf-0PlesuMxuZRi4zRaMr5r3EpHNngzdHjsTfkOftbseAsfzf9zrlC0nJ9oyFJf5MRY2DMRixEFkSu43Y0kXu-4Q1QmFL7qHKx4rE42fFVzgNhCVnS~B3eCCwYXNdJ9hxs0PGZuZzbS6OFVJ7IjCw__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA" type="video/mp4" />
+            <source src={movieDetails.movie.trailer} type="video/mp4" />
           </video>
         </div>
 
