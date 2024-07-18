@@ -13,12 +13,10 @@ const MovieInformation = ({ movie , categories}) => {
 
       <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
         <StarIcon sx={{  color: 'orange' }}></StarIcon>
-        <text style={{color: '#418CFB'}}>{movie.average_rating}</text>
+        <text style={{color: '#418CFB' , fontWeight: '900' , fontSize: '18px'}}>{movie.average_rating.toFixed(1)}</text>
       </div>
 
-
-      <text>{categories.map((category, index) => ( index === categories.length - 1  ? category.name : category.name + ', '  ) )}</text>
-
+      <text style={{color: 'gray' , fontSize: '16px' , marginLeft: '8px' , fontWeight: '400'}}>{categories.map((category, index) => ( index === categories.length - 1  ? category.name : category.name + ', '  ) )}</text>
 
     </div>
 

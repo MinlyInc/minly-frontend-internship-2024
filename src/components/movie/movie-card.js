@@ -8,7 +8,7 @@ const MovieCard = ({ movie }) => {
 
 
   const handleCardClick = () => {
-    window.location.href = `/movie/${movie.uuid}`;
+    window.location.href = `/movies/${movie.uuid}`;
   }
 
 
