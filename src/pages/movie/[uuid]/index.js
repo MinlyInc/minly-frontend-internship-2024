@@ -19,8 +19,6 @@ const fetchMovieDetailsData = async (uuid) => {
   return await res.json();
 }
 
-
-
 const MovieDetailsPage = () => {
   const router = useRouter();
   const { uuid } = router.query;
@@ -28,12 +26,10 @@ const MovieDetailsPage = () => {
 
   const [movieDetails, setMovieDetails] = useState(null);
 
-
   useEffect( () => {
     if(uuid){
         fetchMovieDetailsData(uuid).then(data => setMovieDetails(data));
     }
-
   }, [uuid]);
 
   return (
@@ -54,22 +50,29 @@ const MovieDetailsPage = () => {
 
         <div>
           <h3>Overview</h3>
-          <br/>
-          <div style={{ display: 'flex', flexDirection: 'row' , paddingBottom: '1rem' , alignItems: 'center' }}>
+          <br />
+          <div style={{ display: 'flex', flexDirection: 'row', marginBottom: '12px', alignItems: 'center' }}>
             <text style={{ fontWeight: '700' }}>Director:</text>
             &nbsp;
             <text>{movieDetails.director.name}</text>
           </div>
 
 
-          <div style={{ display: 'flex', flexDirection: 'row' ,alignItems: 'center' }}>
+          <div style={{ display: 'flex', flexDirection: 'row', marginBottom: '12px', alignItems: 'center' }}>
+            <text style={{ fontWeight: '700' }}>Writer:</text>
+            &nbsp;
+            <text>{movieDetails.writers.map((writer, index) => ( index === movieDetails.writers.length - 1  ? writer.name : writer.name + ', '  ) )}</text>
+          </div>
+
+
+          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
             <text style={{ fontWeight: '700' }}>Language:</text>
             &nbsp;
-            {/*<text>{movieDetails.language.name}</text>*/}
+            <text>{movieDetails.language.name}</text>
           </div>
         </div>
 
-        <br/>
+        <br />
 
         <div>
           <h3>Cast</h3>

@@ -17,7 +17,7 @@ const MovieInformation = ({ movie , categories}) => {
       </div>
 
 
-      <p style={{}}>{categories.map((category, index) => ( index === categories.length - 1  ? category.name : category.name + ', '  ) )}</p>
+      <text>{categories.map((category, index) => ( index === categories.length - 1  ? category.name : category.name + ', '  ) )}</text>
 
 
     </div>
