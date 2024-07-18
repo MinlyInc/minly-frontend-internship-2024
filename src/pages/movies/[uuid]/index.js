@@ -39,8 +39,8 @@ const MovieDetailsPage = () => {
         <div className={styles.mediaContainer}>
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqh-F1aHLGeWstYhwN9LASD5AwGbgOE07W8Q&s"
                alt="Girl in a jacket" />
-          <video autoPlay>
-            <source src="blob:https://www.youtube.com/b276864f-c320-46b1-96f0-9de63f8862e3" type="video/mp4" />
+          <video controls autoPlay >
+            <source src="https://imdb-video.media-imdb.com/vi2821244441/1434659607842-pgv4ql-1720050843612.mp4?Expires=1721382606&Signature=M2QWBXAuupnG-cy5NmwEnI3OnXC83iYtmeQ7hdDUpHIVg7T4CPusPnd54flrhMJ8YfaqFfE2q4VfIwojL55pPWIWP8XcoZNwO69m2h3gNZXLQL-X2TbNQAqAHHdyaKMqoYRGnOvfWNCE4ZRDJrveCXRePoTuyiRaQA-gcd8Gc2NiQkENQZna4iigwAdpv3jYWtf-0PlesuMxuZRi4zRaMr5r3EpHNngzdHjsTfkOftbseAsfzf9zrlC0nJ9oyFJf5MRY2DMRixEFkSu43Y0kXu-4Q1QmFL7qHKx4rE42fFVzgNhCVnS~B3eCCwYXNdJ9hxs0PGZuZzbS6OFVJ7IjCw__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA" type="video/mp4" />
           </video>
         </div>
 
@@ -50,6 +50,9 @@ const MovieDetailsPage = () => {
 
         <div>
           <h3>Overview</h3>
+          <p>
+            {movieDetails.movie.overview}
+          </p>
           <br />
           <div style={{ display: 'flex', flexDirection: 'row', marginBottom: '12px', alignItems: 'center' }}>
             <text style={{ fontWeight: '700' }}>Director:</text>
