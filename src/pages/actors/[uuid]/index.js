@@ -1,6 +1,8 @@
 import uuid from '@/pages/movies/[uuid]';
 import { useRouter } from 'next/navigation'
 import { actor_details_end_point } from '@/constants/end-points';
+import styles from '@/styles/Actor.module.css' ;
+import ActorPersonalInformationCard from '@/components/actor/actor-personal-information-card';
 
 export async function getServerSideProps(context){
   const {uuid} = context.params ;
@@ -17,14 +19,16 @@ export async function getServerSideProps(context){
   const parsedData = await res.json();
 
 
-  return { props: { actorDetails : parsedData } }
+  return { props: { actorInformation : parsedData.actor_information , awards: parsedData.awards } }
 }
 
 
-const ActorDetailsPage = ({actorDetails}) => {
+const ActorDetailsPage = ({actorInformation , awards}) => {
     return (
-      <>
-      </>
+      <div className={styles.actorContainer}>
+       <ActorPersonalInformationCard actorInformation={actorInformation}/>
+
+      </div>
     );
 }
 

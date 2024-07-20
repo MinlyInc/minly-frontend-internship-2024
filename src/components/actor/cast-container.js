@@ -5,7 +5,7 @@ import styles from '@/styles/Cast.module.css'
 const CastContainer = ({ actors }) => {
 
   return (
-    <div className={styles.castContainer}>
+    <div className={styles.castCardContainer}>
       {actors.map((actor, index) => (
         <CastCard actor={actor} key={`cast-actor-${index}`} />
       ))}
