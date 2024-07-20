@@ -25,8 +25,14 @@ export async function getServerSideProps(context){
 
 const ActorDetailsPage = ({actorInformation , awards}) => {
     return (
-      <div className={styles.actorContainer}>
-       <ActorPersonalInformationCard actorInformation={actorInformation}/>
+      <div className={styles.actorContainer} >
+          <ActorPersonalInformationCard actorInformation={actorInformation} />
+
+          <div style={{display: 'flex', justifyContent: 'space-between' , flexDirection: 'column'}} >
+            fdsfsafsfsdaffsdhfjskfhjskdhfjskdhfsdjkfhsjkfhskjdsd
+          </div>
+
+
 
       </div>
     );
