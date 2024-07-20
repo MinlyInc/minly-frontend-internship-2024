@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import styles from '@/styles/Movie.module.css';
 import MovieInformation from '@/components/movie/movie-information';
-import CastContainer from '@/components/cast/cast-container';
+import CastContainer from '@/components/actor/cast-container';
 
 const fetchMovieDetailsData = async (uuid) => {
   console.log(movie_details_end_point(uuid))
