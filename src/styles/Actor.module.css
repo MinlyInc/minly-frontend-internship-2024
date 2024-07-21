@@ -1,10 +1,8 @@
 
-
-
-.actorContainer{
+.actorContainer {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-    margin-left: 9.5% ;
-    margin-right: 9.5% ;
+    margin-left: 9.5%;
+    margin-right: 9.5%;
     border-radius: 10px;
     height: 90%;
     display: flex;
@@ -12,7 +10,7 @@
 
 }
 
-.actorInformationCard{
+.actorPersonalInformationContainer {
     height: 100vh;
     padding-left: 38px;
     display: flex;
@@ -21,23 +19,23 @@
 }
 
 
-
-.actorInformationCard img{
-    width: 95%;
-    height: 40%;
+.actorPersonalInformationContainer img {
+    margin-top: 32px;
+    width: 93%;
+    height: 44%;
     border-radius: 10px;
     object-fit: cover;
     margin-bottom: 22px;
 }
 
-.actorInformationHeader{
+.actorPersonalInformationHeader {
     fontFamily: Inter;
-    fontWeight: 600 ;
+    fontWeight: 600;
     margin-bottom: 16px;
     color: rgba(0, 48, 85, 1);
 }
 
-.actorInformationCardProperty{
+.actorPersonalInformationCardProperty {
     color: rgba(0, 48, 85, 1);
     font-weight: 700;
     font-family: Inter;
@@ -45,9 +43,55 @@
 }
 
 
-.actorInformationCardPropertyValue{
+.actorPersonalInformationCardPropertyValue {
     color: rgba(0, 48, 85, 1);
     font-weight: 400;
     font-family: Inter;
     margin-bottom: 8px;
+}
+
+
+.actorDetailedInformationContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.actorDetailedInformationNameProperty {
+    font-weight: 800;
+    font-family: Inter;
+    margin: 0;
+    padding-top: 46px;
+    padding-bottom: 13px;
+    color: rgba(0, 48, 85, 1);
+}
+
+
+.actorDetailedInformationRatingContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.actorDetailedInformationRatingProperty {
+    padding-bottom: 8px;
+    font-weight: 900;
+    font-family: Inter;
+    color: rgba(65, 140, 251, 1);
+}
+
+
+.actorDetailedInformationDefaultProperty {
+    font-family: Inter;
+    margin: 0;
+    padding-bottom: 8px;
+    font-weight: 600;
+    color: rgba(0, 48, 85, 1);
+}
+
+.actorDetailedInformationBioValue {
+    font-family: Inter;
+    font-weight: 400;
+    margin: 0;
+    color: rgba(0, 48, 85, 1);
 }
