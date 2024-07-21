@@ -1,0 +1,38 @@
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .movie-card {
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+  
+  .movie-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .movie-card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .movie-info {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .movie-info h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .movie-info p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
