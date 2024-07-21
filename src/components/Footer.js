@@ -8,6 +8,7 @@ const Footer = () => {
       padding: '20px 0', 
       textAlign: 'center' 
     }}>
+       <Link href="/" passHref>
       <Typography 
         variant="h6" 
         component="div" 
@@ -16,6 +17,7 @@ const Footer = () => {
       >
         MMDB
       </Typography>
+      </Link>
       <Box sx={{ display: 'flex', justifyContent: 'center', gap: '20px', mb: 2 }}>
         <Link href="#" sx={{ textDecoration: 'none', color: 'white' }}>About</Link>
         <Link href="#" sx={{ textDecoration: 'none', color: 'white' }}>Terms of Use</Link>

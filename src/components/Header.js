@@ -1,5 +1,6 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button, Box, InputBase, IconButton, alpha, styled } from '@mui/material';
+import Link from 'next/link'; 
 import SearchIcon from '@mui/icons-material/Search';
 
 const Search = styled('div')(({ theme }) => ({
@@ -51,11 +52,14 @@ const Header = ({ handleSearch }) => {
      
     <AppBar sx={{ backgroundColor: '#ffffff', color: 'white', height: '80px' }}>
       <Toolbar>
-        <Typography variant="h5" component="div" sx={{ color: '#418CFB', flexGrow: 0.05, marginLeft: '150px',  fontWeight: 'bold' }}>
+      <Link href="/" passHref>
+        <Typography variant="h5" component="div" sx={{ color: '#418CFB', flexGrow: 0.05, marginLeft: '130px',  fontWeight: 'bold' }}>
           MMDB
         </Typography>
-        
+      </Link>
+        <Link href="/" passHref>
         <Button color="inherit"  sx={{ color: 'black', fontWeight: 'bold', fontSize: '0.9rem', padding: '10px 20px' }}>Home</Button>
+        </Link>
         <Box sx={{ flexGrow: 1 }} />
         <Search sx={{ marginRight: '150px' }}>
           <SearchIconWrapper>
