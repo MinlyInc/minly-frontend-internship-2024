@@ -2,6 +2,8 @@ import * as React from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import theme from '../styles/theme';
+import Footer from '@/components/footer';
+import '@/styles/globals.css';
 
 export default function MyApp({ Component, pageProps }) {
   React.useEffect(() => {
@@ -15,6 +17,7 @@ export default function MyApp({ Component, pageProps }) {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Component {...pageProps} />
+      <Footer />
     </ThemeProvider>
   );
 }

@@ -1,0 +1,27 @@
+
+.footerContainer {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 23px;
+}
+
+
+.footerText {
+    font-weight: 700;
+    font-family: Rubik;
+    color: #418CFB;
+    line-height: 32px;
+    margin: 0;
+}
+
+
+.footerLinks {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    gap: 24px;
+    text-decoration: none;
+
+}

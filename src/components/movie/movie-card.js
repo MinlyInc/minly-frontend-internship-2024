@@ -1,20 +1,15 @@
 import styles from '@/styles/Movie.module.css';
 import StarIcon from '@mui/icons-material/Star';
 
-
-
-
 const MovieCard = ({ movie }) => {
-
 
   const handleCardClick = () => {
     window.location.href = `/movies/${movie.uuid}`;
-  }
-
+  };
 
   return (
     <div className={styles.movieCard} onClick={handleCardClick}>
-      <div style={{marginTop: '13px' , marginRight: '13px' , marginLeft: '13px'}} >
+      <div style={{ marginTop: '13px', marginRight: '13px', marginLeft: '13px' }}>
         <img
           src={movie.poster}
           alt="no image"
@@ -25,13 +20,13 @@ const MovieCard = ({ movie }) => {
         {movie.average_rating}
         <div>
           {movie.title}
-          <br/>
+          <br />
           {movie.release_date}
         </div>
       </div>
     </div>
   );
-}
+};
 
 
 export default MovieCard;
