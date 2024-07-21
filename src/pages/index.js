@@ -3,14 +3,14 @@ import MovieList from '../components/MovieList';
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
-import { Box, Typography, FormControl, InputLabel, Select, MenuItem, AppBar } from '@mui/material';
+import { Box, Typography, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
   const [filter, setFilter] = useState('all');
   const [page, setPage] = useState(1);
   const [totalMovies, setTotalMovies] = useState(0);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true); 
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
