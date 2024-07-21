@@ -3,6 +3,7 @@ import styles from '@/styles/Actor.module.css';
 import ActorPersonalInformationCard from '@/components/actor/actor-personal-information-card';
 import StarIcon from '@mui/icons-material/Star';
 import ActingContainer from '@/components/actor/acting-container';
+import AwardsContainer from '@/components/actor/awards-container';
 
 export async function getServerSideProps(context) {
   const { uuid } = context.params;
@@ -28,6 +29,7 @@ const ActorDetailsPage = ({ actorInformation, actingList, awards }) => {
       <ActorPersonalInformationCard actorInformation={actorInformation} />
 
       <div className={styles.actorDetailedInformationContainer}>
+
         <h1 className={styles.actorDetailedInformationNameProperty}>{actorInformation.name}</h1>
 
         <div className={styles.actorDetailedInformationRatingContainer}>
@@ -39,6 +41,8 @@ const ActorDetailsPage = ({ actorInformation, actingList, awards }) => {
         <p className={styles.actorDetailedInformationBioValue}>{actorInformation.bio}</p>
 
         <ActingContainer actingList={actingList}></ActingContainer>
+        <br />
+        <AwardsContainer awards={awards}></AwardsContainer>
 
       </div>
     </div>

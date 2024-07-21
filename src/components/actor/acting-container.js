@@ -6,7 +6,7 @@ const ActingContainer = ({ actingList }) => {
     <>
       <h2 className={styles.actorDetailedInformationDefaultProperty}>Acting</h2>
       <ul>
-        {actingList && actingList.map((movieActor, index) => (
+        {actingList && actingList.length > 0 && actingList.map((movieActor, index) => (
           <ActorItem key={`acting-item-${index}`} movieActor={movieActor} />
         ))}
       </ul>

@@ -123,3 +123,27 @@
     color: rgba(0, 48, 85, 1);
 }
 
+
+.awardCard {
+    width: 674px;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+
+.awardCard img {
+    margin-top: 11px;
+    margin-bottom: 11px;
+    margin-left: 10px;
+    margin-right: 14px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    height: 70px;
+}
+
+
