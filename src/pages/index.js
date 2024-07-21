@@ -30,7 +30,12 @@ const Home = () => {
 
   const fetchMovies = () => {
     setLoading(true);
-    let url = `http://localhost:3001/movie?filter=${filter}&page=${page}&limit=8`;
+    let url = `http://localhost:3001/movie?page=${page}&limit=8`;
+
+    if (filter !== 'all') {
+      url = `http://localhost:3001/genre/${filter}/movies?page=${page}&limit=8`;
+    }
+
     if (searchQuery) {
       url += `&query=${encodeURIComponent(searchQuery)}`;
     }
