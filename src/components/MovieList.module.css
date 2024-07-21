@@ -1,11 +1,11 @@
 .movieList {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 18px;
   padding: 14px;
   width: 81.25%;
   height: 90%;
-  background-color: red;
+  background-color: #F7F8FC;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
@@ -16,7 +16,7 @@
   .header {
     display: flex;
     flex-direction: row;
-    background-color:yellow; 
+    background-color:#F7F8FC;
     margin-left: 110px;
   }
   

@@ -3,6 +3,7 @@ import MovieCard from './MovieCard';
 import styles from './MovieList.module.css';
 import { Box, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 import Pagination from './Pagination';
+import FilterListIcon from '@mui/icons-material/FilterList';
 
 const MovieList = ({ searchResults }) => {
   const [movies, setMovies] = useState([]);
@@ -33,7 +34,7 @@ const MovieList = ({ searchResults }) => {
   };
 
   return (
-    <Box>
+    <Box className={styles.container}>
       <Box className={styles.header}>
         <h1>All Movies</h1>
         <FormControl variant="outlined" className={styles.sortControl}>
@@ -47,6 +48,7 @@ const MovieList = ({ searchResults }) => {
                 event.target.value.split('-')[1]
               );
             }}
+            startAdornment={<FilterListIcon />}
             label="Sort by"
           >
             <MenuItem value="release_date-asc">Release Date Ascending</MenuItem>

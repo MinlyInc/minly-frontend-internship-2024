@@ -6,7 +6,7 @@
   height: 480px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
-  background-color: green;
+  background-color: #FFFFFF;
   display: grid;
   align-items: center;
   justify-content: center;
