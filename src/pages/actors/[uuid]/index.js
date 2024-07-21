@@ -2,6 +2,7 @@ import { actor_details_end_point } from '@/constants/end-points';
 import styles from '@/styles/Actor.module.css';
 import ActorPersonalInformationCard from '@/components/actor/actor-personal-information-card';
 import StarIcon from '@mui/icons-material/Star';
+import ActingContainer from '@/components/actor/acting-container';
 
 export async function getServerSideProps(context) {
   const { uuid } = context.params;
@@ -15,12 +16,13 @@ export async function getServerSideProps(context) {
   return {
     props: {
       actorInformation: parsedData.actor_information,
+      actingList: parsedData.acting_list,
       awards: parsedData.awards,
     },
   };
 }
 
-const ActorDetailsPage = ({ actorInformation, awards }) => {
+const ActorDetailsPage = ({ actorInformation, actingList, awards }) => {
   return (
     <div className={styles.actorContainer}>
       <ActorPersonalInformationCard actorInformation={actorInformation} />
@@ -35,6 +37,8 @@ const ActorDetailsPage = ({ actorInformation, awards }) => {
 
         <h2 className={styles.actorDetailedInformationDefaultProperty}>Biography</h2>
         <p className={styles.actorDetailedInformationBioValue}>{actorInformation.bio}</p>
+
+        <ActingContainer actingList={actingList}></ActingContainer>
 
       </div>
     </div>
