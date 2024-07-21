@@ -1,7 +1,14 @@
 import styles from '@/styles/Actor.module.css';
+import { useRouter } from 'next/navigation';
 
 
 const AwardCard = ({ award }) => {
+  const router = useRouter();
+
+  const handleNavigate = () => {
+    router.push(`/movies/${award.movie.uuid}`);
+  };
+
 
   return (
     <div className={styles.awardCard}>
@@ -33,7 +40,8 @@ const AwardCard = ({ award }) => {
           color: 'rgba(65, 140, 251, 1)',
           fontWeight: 400,
           fontFamily: 'Inter',
-        }}>{award.movie.title}</div>
+          cursor: 'pointer',
+        }} onClick={handleNavigate}>{award.movie.title}</div>
 
       </div>
 
