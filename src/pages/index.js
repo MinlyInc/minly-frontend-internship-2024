@@ -51,8 +51,12 @@ const Home = () => {
 
   return (
    <div>
-   <Header handleSearch={handleSearch} />
-    <Box sx={{  padding: '0 160px', mt: 15 }}>
+    <Header 
+      handleSearch={handleSearch} 
+      filter={filter} 
+      handleFilterChange={handleFilterChange} 
+    />
+    <Box sx={{ padding: '0 160px', mt: 15 }}>
       <Typography variant="h4" component="h1"  sx={{ fontSize: '24px', fontWeight: 600, lineHeight: '36px', textAlign: 'left' }}>
         All movies
        </Typography>

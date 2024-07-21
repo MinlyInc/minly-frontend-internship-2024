@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { AppBar, Toolbar, Typography, Button, Box, InputBase, IconButton, alpha, styled, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
@@ -46,6 +46,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const Header = ({ handleSearch, filter, handleFilterChange }) => {
+  const [genres, setGenres] = React.useState([]);
+
+  React.useEffect(() => {
+    fetch('http://localhost:3001/genre')
+      .then(response => response.json())
+      .then(data => {setGenres(data); })
+      .catch(error => console.error('Error fetching genres:', error));
+  }, []);
+
   return (
     <Box sx={{ padding: '0 160px', mt: 15 }}>
       <AppBar sx={{ backgroundColor: '#ffffff', color: 'white', height: '80px' }}>
@@ -53,7 +62,6 @@ const Header = ({ handleSearch, filter, handleFilterChange }) => {
           <Typography variant="h5" component="div" sx={{ color: '#418CFB', flexGrow: 0.05, marginLeft: '150px', fontWeight: 'bold' }}>
             MMDB
           </Typography>
-          
           <Button color="inherit" sx={{ color: 'black', fontWeight: 'bold', fontSize: '0.9rem', padding: '10px 20px' }}>Home</Button>
           <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
             <InputLabel id="genre-select-label">Genre</InputLabel>
@@ -62,35 +70,13 @@ const Header = ({ handleSearch, filter, handleFilterChange }) => {
               id="genre-select"
               value={filter}
               onChange={handleFilterChange}
-              sx={{
-                backgroundColor: 'white',
-                '& .MuiOutlinedInput-notchedOutline': {
-                  borderColor: 'white',
-                },
-                '&:hover .MuiOutlinedInput-notchedOutline': {
-                  borderColor: 'white',
-                },
-                '& .MuiSvgIcon-root': {
-                  color: 'black',
-                },
-              }}
-            >
+              sx={{ backgroundColor: 'white', '& .MuiOutlinedInput-notchedOutline': { borderColor: 'white', }, '&:hover .MuiOutlinedInput-notchedOutline': { borderColor: 'white', }, '& .MuiSvgIcon-root': { color: 'black', }, }} >
               <MenuItem value="all">All</MenuItem>
-              <MenuItem value="Action">Action</MenuItem>
-              <MenuItem value="Adventure">Adventure</MenuItem>
-              <MenuItem value="Comedy">Comedy</MenuItem>
-              <MenuItem value="Drama">Drama</MenuItem>
-              <MenuItem value="Fantasy">Fantasy</MenuItem>
-              <MenuItem value="Horror">Horror</MenuItem>
-              <MenuItem value="Mystery">Mystery</MenuItem>
-              <MenuItem value="Romance">Romance</MenuItem>
-              <MenuItem value="Sci-Fi">Sci-Fi</MenuItem>
-              <MenuItem value="Thriller">Thriller</MenuItem>
-              <MenuItem value="Animation">Animation</MenuItem>
-              <MenuItem value="Crime">Crime</MenuItem>
-              <MenuItem value="Family">Family</MenuItem>
-              <MenuItem value="Biography">Biography</MenuItem>
-              <MenuItem value="History">History</MenuItem>
+              {genres.map(genre => (
+                <MenuItem key={genre.id} value={genre.name}>
+                  {genre.name}
+              </MenuItem>
+            ))}
             </Select>
           </FormControl>
           <Box sx={{ flexGrow: 1 }} />
@@ -109,5 +95,6 @@ const Header = ({ handleSearch, filter, handleFilterChange }) => {
     </Box>
   );
 };
+
 
 export default Header;
