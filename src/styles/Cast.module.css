@@ -1,12 +1,13 @@
 
-.castCardContainer{
+.castCardContainer {
     display: grid;
     gap: 18px;
     height: auto;
     grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
 }
 
-.castCard{
+
+.castCard {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -15,7 +16,7 @@
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
-.castCard:hover{
+.castCard:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     cursor: pointer;
@@ -23,7 +24,7 @@
 }
 
 
-.castCard img{
+.castCard img {
     height: 60px;
     width: 60px;
     object-fit: cover;
@@ -35,14 +36,14 @@
 }
 
 
-.actorName{
+.actorName {
     font-weight: 600;
     font-size: 14px;
     height: 17px;
     margin-bottom: 6px;
 }
 
-.actorCharacter{
+.actorCharacter {
     height: 15px;
     font-weight: 400;
     color: #697586;
