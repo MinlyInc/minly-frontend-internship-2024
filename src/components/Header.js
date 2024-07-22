@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from '@mui/material';
 import { AppBar, Toolbar, Typography, Button, Box, InputBase, IconButton, alpha, styled, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
@@ -59,10 +60,14 @@ const Header = ({ handleSearch, filter, handleFilterChange }) => {
     <Box sx={{ padding: '0 160px', mt: 15 }}>
       <AppBar sx={{ backgroundColor: '#ffffff', color: 'white', height: '80px' }}>
         <Toolbar>
-          <Typography variant="h5" component="div" sx={{ color: '#418CFB', flexGrow: 0.05, marginLeft: '150px', fontWeight: 'bold' }}>
+        <Link href="/" passHref  sx={{ textDecoration: 'none' }}>
+            <Typography variant="h5" component="div" sx={{ color: '#418CFB', flexGrow: 0.05, marginLeft: '150px', fontWeight: 'bold' }}>
             MMDB
           </Typography>
+          </Link> 
+          <Link href="/" passHref> 
           <Button color="inherit" sx={{ color: 'black', fontWeight: 'bold', fontSize: '0.9rem', padding: '10px 20px' }}>Home</Button>
+          </Link>
           <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
             <InputLabel id="genre-select-label">Genre</InputLabel>
             <Select

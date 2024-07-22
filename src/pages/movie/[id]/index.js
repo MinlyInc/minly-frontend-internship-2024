@@ -80,6 +80,13 @@ const MovieDetails = () => {
               <img src="/images/starIcon.jpg" alt="star icon" style={{ height: 20, marginRight: 5 }} />
               <Typography variant="body1" sx={{ color: 'blue' }}>{movie.avgRating} </Typography> <Typography sx={{ml:"10px"}}> Reviews</Typography>
             </Box>
+            <Typography variant="body1" sx={{ mb: 1, color: '#003055' }}>
+              Duration: {movie.duration}
+            </Typography>
+            <Typography variant="body1" sx={{ mb: 1, color: '#003055' }}>
+              Genres: {Array.isArray(movie.genres) ? movie.genres.map(genre => genre.name).join(', ') : 'N/A'}
+            </Typography>
+
             <Typography variant="h6" component="h2" sx={{ fontWeight: 'bold', mb: 1, color: '#003055' }}>Overview</Typography>
             <Typography variant="body1" sx={{ mb: 2, color: '#003055' }}>{movie.overview}</Typography>
             <Typography variant="body1" sx={{ mb: 1, color: '#003055', fontWeight: 'bold' }}>
