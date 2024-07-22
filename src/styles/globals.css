@@ -1,6 +1,7 @@
 
 footer {
     background: linear-gradient(
+            to bottom,
             rgba(0, 48, 85, 1),
             rgba(3, 74, 129, 1)
     );
