@@ -18,12 +18,16 @@ const MovieCard = ({ movie }) => {
       <div className={styles.movieInformation}>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <StarIcon sx={{ width: '20px', height: '20px', color: 'orange' }}></StarIcon>
-          {movie.average_rating.toFixed(1)}
+          <text style={{
+            color: 'rgba(0, 48, 85, 1)',
+            fontWeight: 900,
+            fontFamily: 'Inter',
+          }}>{movie.average_rating.toFixed(1)}</text>
         </div>
         <div>
-          {movie.title}
+          <text style={{ fontWeight: 600, fontFamily: 'Inter', color: 'rgba(26, 44, 89, 1)' }}>{movie.title}</text>
           <br />
-          {movie.release_date}
+          <text style={{ color: 'rgba(124, 124, 124, 1)' }}> {movie.release_date}</text>
         </div>
       </div>
     </div>

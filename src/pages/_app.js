@@ -5,6 +5,7 @@ import theme from '../styles/theme';
 import Footer from '@/components/footer';
 import '@/styles/globals.css';
 import Header from '@/components/header';
+import { Box } from '@mui/material';
 
 export default function MyApp({ Component, pageProps }) {
   React.useEffect(() => {
@@ -18,7 +19,9 @@ export default function MyApp({ Component, pageProps }) {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header />
+      {/*<Box sx={{ height: `calc(100vh - (214px + 72px))` }}>*/}
       <Component {...pageProps} />
+      {/*</Box>*/}
       <Footer />
     </ThemeProvider>
   );
