@@ -36,9 +36,11 @@ export default function MyApp({ Component, pageProps }) {
   }, [router]);
 
   return (
+    <div style={{ backgroundColor: '#ededed', minHeight: '100vh' }}>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Component {...pageProps} />
+        <Component {...pageProps} />
     </ThemeProvider>
+    </div>
   );
 }
