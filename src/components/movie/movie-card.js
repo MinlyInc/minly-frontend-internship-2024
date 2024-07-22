@@ -16,8 +16,10 @@ const MovieCard = ({ movie }) => {
         />
       </div>
       <div className={styles.movieInformation}>
-        <StarIcon sx={{ width: '20px', height: '20px', color: 'orange' }}></StarIcon>
-        {movie.average_rating}
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <StarIcon sx={{ width: '20px', height: '20px', color: 'orange' }}></StarIcon>
+          {movie.average_rating.toFixed(1)}
+        </div>
         <div>
           {movie.title}
           <br />

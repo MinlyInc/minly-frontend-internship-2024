@@ -5,7 +5,6 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-import SelectVariants from '@/components/drop-down/menu';
 import GenreMenu from '@/components/drop-down/menu';
 import { useRouter } from 'next/navigation';
 
