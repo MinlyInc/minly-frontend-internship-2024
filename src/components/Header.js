@@ -60,12 +60,12 @@ const Header = ({ handleSearch, filter, handleFilterChange }) => {
     <Box sx={{ padding: '0 160px', mt: 15 }}>
       <AppBar sx={{ backgroundColor: '#ffffff', color: 'white', height: '80px' }}>
         <Toolbar>
-        <Link href="/" passHref  sx={{ textDecoration: 'none' }}>
-            <Typography variant="h5" component="div" sx={{ color: '#418CFB', flexGrow: 0.05, marginLeft: '150px', fontWeight: 'bold' }}>
+        <Link href="/" passHref style={{ textDecoration: 'none' }}>
+          <Typography variant="h5" component="div" sx={{ color: '#418CFB', flexGrow: 0.05, marginLeft: '150px', fontWeight: 'bold', textDecoration: 'none'  }}>
             MMDB
           </Typography>
-          </Link> 
-          <Link href="/" passHref> 
+          </Link>
+          <Link href='/' passHref>
           <Button color="inherit" sx={{ color: 'black', fontWeight: 'bold', fontSize: '0.9rem', padding: '10px 20px' }}>Home</Button>
           </Link>
           <FormControl sx={{ m: 1, minWidth: 120 }} size="small">

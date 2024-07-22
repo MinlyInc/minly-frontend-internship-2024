@@ -31,15 +31,15 @@ const Home = () => {
   const fetchMovies = () => {
     setLoading(true);
     let url = `http://localhost:3001/movie?page=${page}&limit=8`;
-
+  
     if (filter !== 'all') {
-      url = `http://localhost:3001/genre/${filter}/movies?page=${page}&limit=8`;
+      url += `&filter=${filter}`;
     }
-
+  
     if (searchQuery) {
       url += `&query=${encodeURIComponent(searchQuery)}`;
     }
-
+  
     fetch(url)
       .then(response => response.json())
       .then(data => {
@@ -52,7 +52,7 @@ const Home = () => {
         setLoading(false);
       });
   };
-
+  
 
   return (
    <div>
