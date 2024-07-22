@@ -19,9 +19,9 @@ export default function MyApp({ Component, pageProps }) {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header />
-      {/*<Box sx={{ height: `calc(100vh - (214px + 72px))` }}>*/}
-      <Component {...pageProps} />
-      {/*</Box>*/}
+      <Box sx={{ minHeight: `calc(100vh - (214px + 72px))` }}>
+        <Component {...pageProps} />
+      </Box>
       <Footer />
     </ThemeProvider>
   );

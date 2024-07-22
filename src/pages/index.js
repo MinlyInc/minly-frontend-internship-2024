@@ -21,17 +21,17 @@ export async function getServerSideProps() {
 
   const formattedMovies = parsedJson.movies.map(movie => ({
     ...movie,
-    release_date: convertTimeStamptzToYear(movie.release_date)
+    release_date: convertTimeStamptzToYear(movie.release_date),
   }));
 
-  return { props: { movies: formattedMovies , totalNumberOfPages: parsedJson.totalNumberOfPages } };
+  return { props: { movies: formattedMovies, totalNumberOfPages: parsedJson.totalNumberOfPages } };
 }
 
 
-export default function Home({movies , totalNumberOfPages}) {
+export default function Home({ movies, totalNumberOfPages }) {
   return (
-    <div>
-        <MovieContainer initialMovies={movies}  initTotalNumberOfPages={totalNumberOfPages}/>
+    <div style={{ height: '100%', width: '100%', boxSizing: 'border-box', overflow: 'scroll' }}>
+      <MovieContainer initialMovies={movies} initTotalNumberOfPages={totalNumberOfPages} />
     </div>
   );
 }
