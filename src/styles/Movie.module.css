@@ -1,0 +1,99 @@
+
+.movieCardsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); /* Make columns responsive */
+    gap: 2%; /* Space between grid items */
+    margin-left: auto;
+    margin-right: auto;
+    height: 75%;
+    width: 75%;
+}
+
+.movieCard {
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    width: 88%;
+}
+
+.movieCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+
+}
+
+.movieCard img {
+    margin-left: 3%;
+    margin-top: 1%;
+    object-fit: fill;
+    max-width: 220px;
+    min-height: 250px;
+    border-radius: 6px;
+}
+
+.movieInformation {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.sortBy {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5%;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    padding-left: 11%;
+    padding-right: 14%;
+}
+
+.paginationBar {
+    margin-top: auto;
+    flex-direction: column;
+    display: flex;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    align-items: center;
+}
+
+
+.movieDetailsContainer {
+    margin-right: 11%;
+    margin-left: 11%;
+    border-radius: 12px;
+    border: 1px solid lightgray;
+    margin-top: 4%;
+    padding: 32px;
+    box-shadow: 0 0 10px 0 rgb(0, 0, 0, 0.1);
+    padding-bottom: 3%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.mediaContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.mediaContainer img {
+    border-radius: 12px;
+    min-width: 26%;
+    max-width: 28%;
+}
+
+.mediaContainer video {
+    border-radius: 12px;
+    min-width: 53%;
+}
+
+
+.movieProperty {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+

@@ -1,0 +1,148 @@
+
+.actorContainer {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    margin-left: 9.5%;
+    margin-right: 9.5%;
+    border-radius: 10px;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+}
+
+.actorPersonalInformationContainer {
+    height: 100vh;
+    padding-left: 38px;
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+}
+
+
+.actorPersonalInformationContainer img {
+    margin-top: 32px;
+    width: 93%;
+    height: 44%;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 22px;
+}
+
+.actorPersonalInformationHeader {
+    fontFamily: Inter;
+    fontWeight: 600;
+    margin-bottom: 16px;
+    color: rgba(0, 48, 85, 1);
+}
+
+.actorPersonalInformationCardProperty {
+    color: rgba(0, 48, 85, 1);
+    font-weight: 700;
+    font-family: Inter;
+    margin-bottom: 4px;
+}
+
+
+.actorPersonalInformationCardPropertyValue {
+    color: rgba(0, 48, 85, 1);
+    font-weight: 400;
+    font-family: Inter;
+    margin-bottom: 8px;
+}
+
+
+/* actor detailed information include : title, bio, rating, acting list, and awards */
+
+
+.actorDetailedInformationContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.actorDetailedInformationNameProperty {
+    font-weight: 800;
+    font-family: Inter;
+    margin: 0;
+    padding-top: 46px;
+    padding-bottom: 13px;
+    color: rgba(0, 48, 85, 1);
+}
+
+.actorDetailedInformationRatingContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.actorDetailedInformationRatingProperty {
+    padding-bottom: 8px;
+    font-weight: 900;
+    font-family: Inter;
+    color: rgba(65, 140, 251, 1);
+}
+
+.actorDetailedInformationDefaultProperty {
+    font-family: Inter;
+    margin: 0;
+    padding-bottom: 8px;
+    font-weight: 600;
+    color: rgba(0, 48, 85, 1);
+}
+
+.actorDetailedInformationBioValue {
+    font-family: Inter;
+    font-weight: 400;
+    margin: 0;
+    color: rgba(0, 48, 85, 1);
+    margin-bottom: 31px;
+}
+
+
+/* acting list */
+
+.actingListContainerOfOneItem {
+    display: flex;
+    gap: 5px;
+}
+
+.actingListItemMovieProperty {
+    font-family: Inter;
+    font-weight: 600;
+    color: rgba(0, 48, 85, 1);
+}
+
+.actingListItemAsProperty {
+    font-family: Inter;
+    font-weight: 400;
+    color: rgba(105, 117, 134, 1);
+}
+
+.actingListItemCharacterProperty {
+    font-family: Inter;
+    font-weight: 400;
+    color: rgba(0, 48, 85, 1);
+}
+
+
+.awardCard {
+    width: 674px;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+
+.awardCard img {
+    margin-top: 11px;
+    margin-bottom: 11px;
+    margin-left: 10px;
+    margin-right: 14px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    height: 70px;
+}
+
+
