@@ -13,7 +13,7 @@ const Footer = () => {
         <Link className={styles.footerLinks} href="/help">Help</Link>
       </div>
 
-      <div className="footer-copyright">
+      <div className={styles.footerCopyRights}>
         © {new Date().getFullYear()} MMDB. All rights reserved.
       </div>
 

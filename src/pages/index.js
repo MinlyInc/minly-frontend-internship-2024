@@ -30,7 +30,7 @@ export async function getServerSideProps() {
 
 export default function Home({ movies, totalNumberOfPages }) {
   return (
-    <div style={{ height: '100%', width: '100%', boxSizing: 'border-box', overflow: 'scroll' }}>
+    <div style={{ height: '100%', width: '100%', overflow: 'scroll' }}>
       <MovieContainer initialMovies={movies} initTotalNumberOfPages={totalNumberOfPages} />
     </div>
   );

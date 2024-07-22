@@ -50,7 +50,6 @@
 }
 
 .paginationBar {
-    margin-top: auto;
     flex-direction: column;
     display: flex;
     padding-top: 4rem;
