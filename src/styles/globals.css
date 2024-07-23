@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
@@ -86,14 +86,14 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  /* color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
-}
+    rgb(var(--background-start-rgb)); */
+    
 
 a {
   color: inherit;
@@ -104,4 +104,19 @@ a {
   html {
     color-scheme: dark;
   }
+} */
+.rate{
+  font-size: 13px !important;
 }
+.star{
+  margin-top: 1px;
+}
+.movie-image{
+  min-height: 300px;
+  max-height: 600px;
+}
+.pagination{
+  display: flex;
+  justify-content: center;
+}
+

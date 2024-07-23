@@ -1,4 +1,4 @@
-.main {
+/* .main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -128,7 +128,7 @@
 }
 
 /* Mobile */
-@media (max-width: 700px) {
+/* @media (max-width: 700px) {
   .content {
     padding: 4rem;
   }
@@ -205,7 +205,7 @@
 }
 
 /* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
+/* @media (min-width: 701px) and (max-width: 1120px) {
   .grid {
     grid-template-columns: repeat(2, 50%);
   }
@@ -229,3 +229,100 @@
     transform: rotate(0deg);
   }
 }
+
+body{
+  background-color: #F8F8F8;
+} */ 
+
+
+.mainDiv{
+  width: 1170px;
+  /* height: 1056px; */
+  /* background-color: aqua; */
+  /* margin-left: 11%;
+  margin-right: 11%; */
+  margin-inline: auto;
+}
+.title{
+  font-size: 25px;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.trailer, .image{
+border-radius: 10px;
+width: 100%;
+height:95%;
+object-fit: contain;
+}
+.dateSpan{
+  font-size: 24px;
+  color: #595C5F;
+}
+.cardd{
+  width: 278px !important;
+}
+
+.lightBlue{
+  color: Light blue;
+}
+
+.grey{
+  color: #697586;
+  font-size: 14px;
+}
+.cardWidth{
+width: 225px !important;
+border: 1px solid transparent !important;
+}
+.castCard{
+  border-radius: 10px;
+  height: 68px;
+}
+
+.header{
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.Name{
+  font-size: 14px;
+  font-weight: 400;
+  color: darkblue;
+}
+.cast{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.movieImage{
+  aspect-ratio: 1/1;
+}
+
+.overView{
+  font-weight: 400;
+}
+
+.character{
+  font-size: 12px;
+  color: rgba(105, 117, 134, 1);
+}
+
+@media only screen and (min-width: 1100px){
+  .image{
+    height: 420px;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .image{
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+  .trailer{
+    height: 600px;
+    aspect-ratio: 1/1;
+  }
+}
+
