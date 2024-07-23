@@ -68,7 +68,7 @@ export default function Items() {
                 <div className="card-img">
                   <img
                     height={300}
-                    className="w-100 object-fit-cover movie-image"
+                    className={`w-100 object-fit-cover movieImage`}
                     src={movie.poster}
                     alt=""
                   />
