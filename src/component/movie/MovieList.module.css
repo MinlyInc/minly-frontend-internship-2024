@@ -1,10 +1,8 @@
-.movie-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
+.movielist {
+    display: grid
+}
   
-  .movie-card {
+  .movieCard {
     width: 200px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -12,26 +10,27 @@
     transition: transform 0.2s;
   }
   
-  .movie-card:hover {
+  .movieCard:hover {
     transform: scale(1.05);
   }
   
-  .movie-card img {
+  .movieCard img {
     width: 100%;
     height: auto;
   }
   
-  .movie-info {
+  .movieInfo {
     padding: 10px;
     text-align: center;
   }
   
-  .movie-info h3 {
+  .movieInfo-h3 {
     margin: 0;
     font-size: 18px;
+    color: blue;
   }
   
-  .movie-info p {
+  .movieInfo-p {
     margin: 5px 0;
     font-size: 14px;
   }
