@@ -17,7 +17,7 @@ export default function MovieDetails() {
       axios
         .get(`http://localhost:3001/movie/${uuid}`)
         .then((res) => {
-          console.log('sss',res.data);
+          console.log('sss', res.data);
           setMovie(res.data);
           setMovieActor(res.data.movieActorActors);
           setMovieDirector(res.data.director);
