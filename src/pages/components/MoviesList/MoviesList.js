@@ -15,8 +15,9 @@ function MovieList() {
 
   useEffect(() => {
     const fetchMovies = async (page, sortOption, searchValue) => {
-      console.log(process.env.PUBLIC_API_URL)
-      const response = await fetch(`http://127.0.0.1:3001/movies?page=${page}&sort=${sortOption}&search=${searchValue}&genreId=${genre}`);
+      console.log(process.env.NEXT_PUBLIC_API_URL_MOVIES)
+      // const response = await fetch(`http://127.0.0.1:3001/movies?page=${page}&sort=${sortOption}&search=${searchValue}&genreId=${genre}`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL_MOVIES}/movies?page=${page}&sort=${sortOption}&search=${searchValue}&genreId=${genre}`);
       const fetchedMovies = await response.json();
       setMovies(fetchedMovies.movies);
       console.log(fetchedMovies)
@@ -28,7 +29,7 @@ function MovieList() {
 
   useEffect(() => {
     const fetchGenres = async () => {
-      const response = await fetch('http://127.0.0.1:3001/genres');
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL_MOVIES}/genres`);
       const genres = await response.json();
       setGenres(genres);
     };
@@ -67,7 +68,7 @@ function MovieList() {
 
   return (
     <div className={styles.pageContainer}>
-      <Header searchValue={searchValue} handleSearch={handleSearch} handleClick={handleClick} genre={genre} genres={genres} handleGenreChange={handleGenreChange} />
+      <Header isListPage={true} searchValue={searchValue} handleSearch={handleSearch} handleClick={handleClick} genre={genre} genres={genres} handleGenreChange={handleGenreChange} />
       <div className={styles.contentContainer}>
         <Grid container alignItems="center" justifyContent="space-between" className={styles.headerContainer}>
           <Grid item>
