@@ -5,6 +5,9 @@ import styles from '../../../styles/Home.module.css';
 import { useParams } from 'next/navigation';
 import { useRouter } from 'next/router';
 import ActorsCard from '@/Component/ActorsCard/ActorsCard';
+import Navbar from '@/Component/Navbar/Navbar';
+import Footer from '@/Component/Footer/Footer';
+import Link from 'next/link';
 
 export default function MovieDetails() {
   const router = useRouter();
@@ -36,6 +39,10 @@ export default function MovieDetails() {
   const embedUrl = `https://www.youtube.com/embed/${trailerId}`;
   return (
     <>
+    <Navbar/>
+    <div className="container pt-4">
+      <h6 className={`${styles.navigation}`}><Link className='text-decoration-none' href={'/'}>Home</Link> | {movie.title}</h6>
+    </div>
       <div className={styles.mainDiv}>
         <div style={{ marginTop: '20px' }} className="container shadow">
           <div className="row">
@@ -134,6 +141,8 @@ export default function MovieDetails() {
           </div>
         </div>
       </div>
+
+      <Footer/>
     </>
   );
 }

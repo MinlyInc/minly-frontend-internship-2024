@@ -5,11 +5,15 @@ import Stack from '@mui/material/Stack';
 import DropDown from '../../DropDown/DropDown';
 import Link from 'next/link';
 import styles from '../../../styles/Home.module.css'
+import Navbar from '@/Component/Navbar/Navbar';
+import Footer from '@/Component/Footer/Footer';
+
 
 export default function Items() {
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
   const [field, setField] = useState('title');
+  const [filter, setFilter] = useState('');
 
   async function getAllMovies() {
     axios
@@ -23,7 +27,7 @@ export default function Items() {
   function getPagination() {
     axios
       .get(
-        `http://localhost:3001/movie?page=${page}&sortField=${field}&sortOrder=desc`
+        `http://localhost:3001/movie?page=${page}&sortField=${field}&Genre=${filter}`
       )
       .then((res) => {
         setMovies(res.data.data);
@@ -32,6 +36,8 @@ export default function Items() {
         console.log('error', err);
       });
   }
+
+  
 
   function handleChange(ee) {
     setField((prev) => (prev = ee));
@@ -47,10 +53,15 @@ export default function Items() {
 
   useEffect(() => {
     getPagination();
-  }, [page, field]);
+  }, [page, field,filter]);
+
+
+ 
+
 
   return (
     <>
+    <Navbar  setMovies={setMovies} setFilter={setFilter} filter={filter} />
       <div className="container mt-5">
         <div className="d-flex justify-content-between">
           <div>
@@ -68,7 +79,7 @@ export default function Items() {
                 <div className="card-img">
                   <img
                     height={300}
-                    className={`w-100 object-fit-cover movieImage`}
+                    className={` ${styles.movieImage}`}
                     src={movie.poster}
                     alt=""
                   />
@@ -118,6 +129,7 @@ export default function Items() {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

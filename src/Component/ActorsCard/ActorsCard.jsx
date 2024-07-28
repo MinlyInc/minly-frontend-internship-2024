@@ -8,16 +8,16 @@ export default function ActorsCard({ movieActors }) {
       {movieActors?.map((actor, index) => (
         <div key={index} className="col-12 col-md-3 ">
           <div className={`card mb-3 ${styles.cardWidth} `}>
-            <Link href={`/ActorDetails/${actor.actor.uuid}`}>
+            <Link className='text-decoration-none' href={`/ActorDetails/${actor.actor.uuid}`}>
               <div
                 className={`d-flex align-items-center px-2 shadow border-3 ${styles.castCard}`}
               >
-                <div className="img-div">
+                <div className={`${styles.actorCardImage}`}>
                   <img
                     height={50}
                     width={55}
                     src={actor.actor.picture}
-                    className="py-1 rounded-3"
+                    className={`${styles.castImage}`}
                     alt="..."
                   />
                 </div>
