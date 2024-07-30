@@ -1,14 +1,12 @@
-import Items from '@/Component/Items/pages/Items';
-import Main from '@/Component/Main/Main';
 import'bootstrap/dist/css/bootstrap.min.css'
+import HomePage from '../Component/Items/pages/HomePage';
 
 
 
 export default function Home() {
   return (
     <>
-      {/* <Main/> */}
-      <Items/>
+      <HomePage/>
     </>
   );
 }

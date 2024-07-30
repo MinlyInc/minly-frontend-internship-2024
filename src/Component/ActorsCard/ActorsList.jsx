@@ -2,11 +2,11 @@ import React from 'react';
 import styles from '../../styles/Home.module.css';
 import Link from 'next/link';
 
-export default function ActorsCard({ movieActors }) {
+export default function ActorsList({ movieActors }) {
   return (
     <>
       {movieActors?.map((actor, index) => (
-        <div key={index} className="col-12 col-md-3 ">
+        <div key={actor.actor.uuid} className="col-12 col-md-3 ">
           <div className={`card mb-3 ${styles.cardWidth} `}>
             <Link className='text-decoration-none' href={`/ActorDetails/${actor.actor.uuid}`}>
               <div

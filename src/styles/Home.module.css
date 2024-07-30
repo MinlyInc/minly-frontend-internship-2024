@@ -57,6 +57,12 @@ border: 1px solid transparent !important;
   
 }
 
+.icon{
+ margin-top: -1.6px;
+  color: yellow;
+  padding-right: 3px;
+}
+
 .actorCardImage{
   object-fit: fill;
   object-position: center;

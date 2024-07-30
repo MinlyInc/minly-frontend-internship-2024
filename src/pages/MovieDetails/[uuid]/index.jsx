@@ -2,12 +2,11 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from '../../../styles/Home.module.css';
-import { useParams } from 'next/navigation';
 import { useRouter } from 'next/router';
-import ActorsCard from '@/Component/ActorsCard/ActorsCard';
 import Navbar from '@/Component/Navbar/Navbar';
 import Footer from '@/Component/Footer/Footer';
 import Link from 'next/link';
+import ActorsList from '@/Component/ActorsCard/ActorsList';
 
 export default function MovieDetails() {
   const router = useRouter();
@@ -30,6 +29,7 @@ export default function MovieDetails() {
         });
     }
   }
+
 
   useEffect(() => {
     getMovieById();
@@ -136,7 +136,7 @@ export default function MovieDetails() {
             </div>
 
             <div className="row">
-              <ActorsCard movieActors={movieActors} />
+              <ActorsList movieActors={movieActors} />
             </div>
           </div>
         </div>

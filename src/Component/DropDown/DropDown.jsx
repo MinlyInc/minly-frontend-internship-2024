@@ -3,9 +3,8 @@ import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import NativeSelect from '@mui/material/NativeSelect';
-import axios from 'axios';
 
-export default function NativeSelectDemo({ handleChange }) {
+export default function DropDown({ handleChange }) {
   return (
     <Box sx={{ minWidth: 90 }}>
       <FormControl fullWidth>
@@ -20,7 +19,7 @@ export default function NativeSelectDemo({ handleChange }) {
           }}
           onChange={(e) => handleChange(e.target.value)}
         >
-          <option value={'title'}>title</option>
+          <option value={'title'}>Title</option>
           <option value={'averageRatings'}>Average Rating</option>
           <option value={'releaseDate'}>Release Date</option>
         </NativeSelect>
