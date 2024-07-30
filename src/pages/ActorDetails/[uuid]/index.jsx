@@ -7,60 +7,22 @@ import Link from 'next/link';
 import Reward from '@/Component/Reward/Reward';
 import Navbar from '@/Component/Navbar/Navbar';
 import Footer from '@/Component/Footer/Footer';
+import StarIcon from '@mui/icons-material/Star';
+import{getActorById,getRewards}from '../../../utils/ApiFile'
 
 export default function ActorDetails() {
+  
   const router = useRouter();
   const { uuid } = router.query;
-  const [actor, setActor] = useState([]);
   const [movieActor, setMovieActor] = useState([]);
   const [reward, setReward] = useState([]);
-
-  function getActorById() {
-    console.log('hello');
-    if (uuid) {
-      axios
-        .get(`http://localhost:3001/actor/${uuid}`)
-        .then((res) => {
-          // console.log('asssa', res.data);
-          setActor(res.data);
-          setMovieActor(res.data.movieActorActors);
-        })
-        .catch((err) => {
-          console.log('err actor', err);
-        });
-    }
-  }
-
-  function getRewards() {
-    axios
-      .get(`http://localhost:3001/award/${uuid}`)
-      .then((res) => {
-        console.log('awards', res.data);
-        setReward(res.data);
-      })
-      .catch((err) => {
-        console.log('err', err);
-      });
-  }
+  const [actor, setActor] = useState([]);
 
   useEffect(() => {
-    getActorById();
-    getRewards();
+    getActorById(uuid,setActor,setMovieActor);
+    getRewards(uuid,setReward);
   }, [uuid]);
 
-  const array1 = ['x', 'y', 'z'];
-
-  const array2 = ['q', 'e', 'z'];
-
-  function find() {
-    const result = array1.filter((item) => array2.includes(item));
-    if (result != '') {
-      console.log('true');
-    } else {
-      console.log('false');
-    }
-  }
-  find();
 
   return (
     <>
@@ -117,27 +79,7 @@ export default function ActorDetails() {
                   {actor.firstName} {actor.lastName}
                 </h2>
                 <div className="d-flex">
-                  <svg
-                    className="star"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1.5em"
-                    height="1.2em"
-                    viewBox="0 0 72 72"
-                  >
-                    <path
-                      fill="#fcea2b"
-                      d="M35.993 10.736L27.791 27.37L9.439 30.044l13.285 12.94l-3.128 18.28l16.412-8.636l16.419 8.624l-3.142-18.278l13.276-12.95l-18.354-2.66z"
-                    ></path>
-                    <path
-                      fill="none"
-                      stroke="#000"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeMiterlimit={10}
-                      strokeWidth={2}
-                      d="M35.993 10.736L27.791 27.37L9.439 30.044l13.285 12.94l-3.128 18.28l16.412-8.636l16.419 8.624l-3.142-18.278l13.276-12.95l-18.354-2.66z"
-                    ></path>
-                  </svg>
+                   <h6 className={`${styles.icon}`}><StarIcon sx={{ fontSize: 18 }}/></h6>
                   <h6 className="rate">
                     {' '}
                     <span className="text-primary"> 9.2</span>{' '}
@@ -158,7 +100,6 @@ export default function ActorDetails() {
                     );
                   })}
                 </ul>
-
                 <Reward reward={reward} />
               </div>
             </div>

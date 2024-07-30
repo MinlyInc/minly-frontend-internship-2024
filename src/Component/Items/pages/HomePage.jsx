@@ -6,6 +6,8 @@ import DropDown from '../../DropDown/DropDown';
 import Navbar from '@/Component/Navbar/Navbar';
 import Footer from '@/Component/Footer/Footer';
 import MovieList from '@/Component/MovieList/MovieList';
+import { getPagination } from '@/utils/ApiFile';
+
 
 
 export default function HomePage() {
@@ -13,22 +15,7 @@ export default function HomePage() {
   const [page, setPage] = useState(1);
   const [field, setField] = useState('title');
   const [filter, setFilter] = useState('');
-
-  function getPagination() {
-    axios
-      .get(
-        `http://localhost:3001/movie?page=${page}&sortField=${field}&Genre=${filter}`
-      )
-      .then((res) => {
-        setMovies(res.data.data);
-      })
-      .catch((err) => {
-        console.log('error', err);
-      });
-  }
-
-  
-
+ 
   function handleChange(field) {
     setField((prev) => (prev = field));
   }
@@ -37,13 +24,9 @@ export default function HomePage() {
     setPage((prev) => (prev = page));
   }
 
-
   useEffect(() => {
-    getPagination();
+    getPagination(page,field,filter,setMovies);
   }, [page, field,filter]);
-
-
- 
 
 
   return (
@@ -60,7 +43,6 @@ export default function HomePage() {
         </div>
         <div className="row">
           <MovieList movies={movies}/>
-
           <div className="d-flex justify-content-center mt-4">
             <Stack spacing={2}>
               <Pagination
