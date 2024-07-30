@@ -10,10 +10,10 @@ export default function Footer() {
             MMDB
           </a>
 <div className='d-flex text-white mt-3'>
-  <h6 className='px-3'>About</h6>
-  <h6 className='px-3'>Terms Of Use</h6>
-  <h6 className='px-3'>Privacy Policy</h6>
-  <h6 className='px-3'>Help</h6>
+  <a role='button' className='px-3 text-decoration-none'>About</a>
+  <a role='button' className='px-3 text-decoration-none'>Terms Of Use</a>
+  <a role='button' className='px-3 text-decoration-none'>Privacy Policy</a>
+  <a role='button' className='px-3 text-decoration-none'>Help</a>
 </div>
 <div className={`${styles.copyRights} mt-3`}>
 © 2023 MMDB. All rights reserved.

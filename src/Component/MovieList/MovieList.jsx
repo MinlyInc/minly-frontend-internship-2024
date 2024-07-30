@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import styles from '../../styles/Home.module.css'
 import StarIcon from '@mui/icons-material/Star';
+import { Typography } from '@mui/material';
 
 export default function MovieList({movies}) {
   return <>
@@ -21,13 +22,16 @@ export default function MovieList({movies}) {
                   </Link>
                 <div className="card-body">
                   <div className="d-flex">
-                    <h6 className={`${styles.icon}`}><StarIcon sx={{ fontSize: 18 }}/></h6>
-                    <h6 className="rate">{movie.averageRatings}</h6>
+                   <Typography className={`${styles.icon}`}><StarIcon sx={{ fontSize: 18 }}/></Typography>
+                   <Typography>{movie.averageRatings}</Typography>
                   </div>
-                  <h6 className="fw-bold">{movie.title}</h6>
-                  <h6 className="text-muted">
+                  <div className='d-flex flex-column'>
+
+                  <Typography variant='text'>{movie.title}</Typography>
+                  <Typography variant='text'>
                     {movie.releaseDate.split('-')[0]}
-                  </h6>
+                  </Typography>
+                  </div>
                 </div>
               </div>
             </div>

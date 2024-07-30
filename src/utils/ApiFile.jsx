@@ -1,9 +1,9 @@
 import axios from "axios";
-
+import { url } from "./url";
 
 export function getRewards(uuid,setReward) {
     axios
-      .get(`http://localhost:3001/award/${uuid}`)
+      .get(`${url}/award/${uuid}`)
       .then((res) => {
         console.log('awards', res.data);
         setReward(res.data);
@@ -17,7 +17,7 @@ export function getRewards(uuid,setReward) {
     console.log('hello');
     if (uuid) {
       axios
-        .get(`http://localhost:3001/actor/${uuid}`)
+        .get(`${url}/actor/${uuid}`)
         .then((res) => {
           console.log('asssa', res.data);
           setActor(res.data);
@@ -32,7 +32,7 @@ export function getRewards(uuid,setReward) {
  export function getPagination(page,field,filter,setMovies) {
     axios
       .get(
-        `http://localhost:3001/movie?page=${page}&sortField=${field}&Genre=${filter}`
+        `${url}/movie?page=${page}&sortField=${field}&Genre=${filter}`
       )
       .then((res) => {
         setMovies(res.data.data);

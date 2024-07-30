@@ -7,6 +7,8 @@ import Navbar from '@/Component/Navbar/Navbar';
 import Footer from '@/Component/Footer/Footer';
 import Link from 'next/link';
 import ActorsList from '@/Component/ActorsCard/ActorsList';
+import StarIcon from '@mui/icons-material/Star';
+import { Typography } from '@mui/material';
 
 export default function MovieDetails() {
   const router = useRouter();
@@ -41,7 +43,7 @@ export default function MovieDetails() {
     <>
     <Navbar/>
     <div className="container pt-4">
-      <h6 className={`${styles.navigation}`}><Link className='text-decoration-none' href={'/'}>Home</Link> | {movie.title}</h6>
+      <Typography variant='text' className={`${styles.navigation}`}><Link className='text-decoration-none' href={'/'}>Home</Link> | {movie.title}</Typography>
     </div>
       <div className={styles.mainDiv}>
         <div style={{ marginTop: '20px' }} className="container shadow">
@@ -71,68 +73,48 @@ export default function MovieDetails() {
           </div>
           <div>
             <div>
-              <h1 className={styles.title}>
+              <Typography variant='h3' className={styles.title}>
                 {movie.title}{' '}
-                <span className={styles.dateSpan}>
+                <Typography variant='text' className={styles.dateSpan}>
                   ({movie?.releaseDate?.split('-')[0]})
-                </span>
-              </h1>
+                </Typography>
+              </Typography>
             </div>
             <div>
               <div className="d-flex ms-2">
-                <svg
-                  className="star"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1.5em"
-                  height="1.2em"
-                  viewBox="0 0 72 72"
-                >
-                  <path
-                    fill="#fcea2b"
-                    d="M35.993 10.736L27.791 27.37L9.439 30.044l13.285 12.94l-3.128 18.28l16.412-8.636l16.419 8.624l-3.142-18.278l13.276-12.95l-18.354-2.66z"
-                  ></path>
-                  <path
-                    fill="none"
-                    stroke="#000"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeMiterlimit={10}
-                    strokeWidth={2}
-                    d="M35.993 10.736L27.791 27.37L9.439 30.044l13.285 12.94l-3.128 18.28l16.412-8.636l16.419 8.624l-3.142-18.278l13.276-12.95l-18.354-2.66z"
-                  ></path>
-                </svg>
-                <h6 className="rate">
+              <Typography className={`${styles.icon}`}><StarIcon sx={{ fontSize: 18 }}/></Typography>
+                <Typography className="d-flex">
                   {' '}
-                  <span className="text-primary">
+                  <Typography className="text-primary">
                     {' '}
                     {movie.averageRatings}
-                  </span>{' '}
-                  <span className={styles.grey}>reviews (420)</span>
-                </h6>
+                  </Typography>{' '}
+                  <Typography className={styles.grey}>reviews (420)</Typography>
+                </Typography>
               </div>
-              <h6 className="text-muted ms-3">
-                1h 32m <span className="fw-bolder">.</span> {movie.genre}
-              </h6>
+              <Typography className="text-muted ms-3">
+                1h 32m <Typography variant='text' className="fw-bolder">.</Typography> {movie.genre}
+              </Typography>
               <div className="mt-3 ms-3">
-                <h5 className="fw-bolder">Overview</h5>
-                <p className={`${styles.overView}`}>{movie.overview}</p>
+                <Typography variant='h3' className="fw-bolder">Overview</Typography>
+                <Typography variant='text' className={`${styles.overView}`}>{movie.overview}</Typography>
               </div>
             </div>
           </div>
           <div>
             <div className="ms-3">
-              <h6 className="">
+              <Typography className="mt-3">
                 {' '}
-                <span className={styles.header}>Director:</span>{' '}
+                <Typography variant='text' className={styles.header}>Director:</Typography>{' '}
                 {movieDirector?.firstName} {movieDirector?.lastName}
-              </h6>
-              <h6 className=" mt-3">
-                <span className={styles.header}>Writer:</span> karim magdy
-              </h6>
-              <h6 className=" mt-3">
-                <span className={styles.header}>Language:</span> English
-              </h6>
-              <h6 className={` mt-3 ${styles.cast}`}>cast</h6>
+              </Typography>
+              <Typography className=" mt-3">
+                <Typography variant='text' className={styles.header}>Writer:</Typography> karim magdy
+              </Typography>
+              <Typography className="mt-3 ">
+                <Typography variant='text' className={styles.header}>Language:</Typography> English
+              </Typography>
+              <Typography className={` mt-3 ${styles.cast}`}>cast</Typography>
             </div>
 
             <div className="row">
