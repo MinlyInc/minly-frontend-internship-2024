@@ -1,0 +1,37 @@
+
+.castCardContainer {
+    display: grid;
+    gap: 18px;
+    height: auto;
+    grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
+}
+
+
+.castCard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 74px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.castCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+
+}
+
+
+.castCard img {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    margin-right: 9px;
+    margin-left: 12px;
+}
+
