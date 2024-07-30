@@ -1,24 +1,44 @@
 import styles from '@/styles/Actor.module.css';
+import Typography from '@mui/material/Typography';
 
 
 const ActorPersonalInformationCard = ({ actorInformation }) => {
   return (
     <div className={styles.actorPersonalInformationContainer}>
-      <img src={actorInformation.picture} alt="Girl in a jacket" />
+      <img src={actorInformation.name} alt="Girl in a jacket" />
 
-      <h2 className={styles.actorPersonalInformationHeader}>Personal Information</h2>
-      <text className={styles.actorPersonalInformationCardProperty}>Know for</text>
-      <text className={styles.actorPersonalInformationCardPropertyValue}>acting</text>
+      <Typography variant="h3">
+        Personal Information
+      </Typography>
+      <Typography variant="text">
+        Know for
+      </Typography>
+      <Typography variant="text" fontWeight="fontWeightLight" sx={{ marginBottom: '6px' }}>
+        acting
+      </Typography>
 
-      <text className={styles.actorPersonalInformationCardProperty}>Gender</text>
-      <text className={styles.actorPersonalInformationCardPropertyValue}>{actorInformation.gender}</text>
+
+      <Typography variant="text">
+        Gender
+      </Typography>
+      <Typography variant="text" fontWeight="fontWeightLight" sx={{ marginBottom: '6px' }}>
+        {actorInformation.gender}
+      </Typography>
 
 
-      <text className={styles.actorPersonalInformationCardProperty}>Birthdate</text>
-      <text className={styles.actorPersonalInformationCardPropertyValue}>{actorInformation.birth_date}</text>
+      <Typography variant="text">
+        Birthdate
+      </Typography>
+      <Typography variant="text" fontWeight="fontWeightLight" sx={{ marginBottom: '6px' }}>
+        {actorInformation.birth_date}
+      </Typography>
 
-      <text className={styles.actorPersonalInformationCardProperty}>Nationality</text>
-      <text className={styles.actorPersonalInformationCardPropertyValue}>{actorInformation.nationality}</text>
+      <Typography variant="text">
+        Nationality
+      </Typography>
+      <Typography variant="text" fontWeight="fontWeightLight" sx={{ marginBottom: '6px' }}>
+        {actorInformation.nationality}
+      </Typography>
     </div>
   );
 };

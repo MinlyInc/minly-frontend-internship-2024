@@ -1,14 +1,26 @@
 import styles from '@/styles/Actor.module.css';
+import Typography from '@mui/material/Typography';
 
 
 const ActorItem = ({ movieActor }) => {
 
   return (
-    <li className={styles.actingListItem}>
+    <li>
       <div className={styles.actingListContainerOfOneItem}>
-        <text className={styles.actingListItemMovieProperty}>{movieActor.movie.title}</text>
-        <text className={styles.actingListItemAsProperty}>as</text>
-        <text className={styles.actingListItemCharacterProperty}>{movieActor.character}</text>
+        <Typography variant="text">
+          {movieActor.movie.title}
+        </Typography>
+
+
+        <Typography variant="text" color="secondary" fontWeight="fontWeightLight">
+          as
+        </Typography>
+
+
+        <Typography variant="text" fontWeight="fontWeightLight">
+          {movieActor.character}
+        </Typography>
+
       </div>
     </li>
   );

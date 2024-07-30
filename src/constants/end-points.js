@@ -1,8 +1,7 @@
+export const BACKEND_URL = 'http://localhost:3000';
 
-export const backend_url = 'http://localhost:3000';
+export const MOVIES_END_POINT = `${BACKEND_URL}/movies`;
 
-export const movies_end_point = `${backend_url}/movies`
+export const MOVIE_DETAILS_END_POINT = (uuid) => `${MOVIES_END_POINT}/${uuid}`;
 
-export const movie_details_end_point =(uuid) =>  `${movies_end_point}/${uuid}`
-
-export const actor_details_end_point =(uuid) =>  `${backend_url}/actors/${uuid}`
+export const ACTOR_DETAILS_END_POINT = (uuid) => `${BACKEND_URL}/actors/${uuid}`;

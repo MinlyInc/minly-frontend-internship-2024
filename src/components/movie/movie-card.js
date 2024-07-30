@@ -1,10 +1,14 @@
 import styles from '@/styles/Movie.module.css';
 import StarIcon from '@mui/icons-material/Star';
+import { useRouter } from 'next/navigation';
+import Typography from '@mui/material/Typography';
+import { convertTimeStamptzToYear } from '@/utilities/timeStampConverter';
 
 const MovieCard = ({ movie }) => {
 
+  const router = useRouter();
   const handleCardClick = () => {
-    window.location.href = `/movies/${movie.uuid}`;
+    router.push(`/movies/${movie.uuid}`);
   };
 
   return (
@@ -12,22 +16,25 @@ const MovieCard = ({ movie }) => {
       <div style={{ marginTop: '13px', marginRight: '13px', marginLeft: '13px' }}>
         <img
           src={movie.poster}
-          alt="no image"
+          alt={movie.title}
         />
       </div>
       <div className={styles.movieInformation}>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <StarIcon sx={{ width: '20px', height: '20px', color: 'orange' }}></StarIcon>
-          <text style={{
-            color: 'rgba(0, 48, 85, 1)',
-            fontWeight: 900,
-            fontFamily: 'Inter',
-          }}>{movie.average_rating.toFixed(1)}</text>
+          <Typography color="textPrimary" component="text" fontWeight="fontWeightExtraBold">
+            {movie.average_rating.toFixed(1)}
+          </Typography>
         </div>
         <div>
-          <text style={{ fontWeight: 600, fontFamily: 'Inter', color: 'rgba(26, 44, 89, 1)' }}>{movie.title}</text>
+          <Typography component="text" fontWeight="fontWeightRegular" color="textPrimary">
+            {movie.title}
+          </Typography>
           <br />
-          <text style={{ color: 'rgba(124, 124, 124, 1)' }}> {movie.release_date}</text>
+
+          <Typography component="text" color="textSecondary">
+            {convertTimeStamptzToYear(movie.release_date)}
+          </Typography>
         </div>
       </div>
     </div>

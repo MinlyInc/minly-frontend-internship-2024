@@ -1,29 +1,43 @@
 import StarIcon from '@mui/icons-material/Star';
-import { convertTimeStamptzToYear } from '@/pages';
-import styles from '@/styles/Movie.module.css';
+import { convertTimeStamptzToYear } from '@/utilities/timeStampConverter';
+import Typography from '@mui/material/Typography';
 
 
-const MovieInformation = ({ movie , categories}) => {
-  return(
-    <div style={{display: 'flex', flexDirection: 'column'}}>
+const MovieInformation = ({ movie, categories }) => {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
 
-      <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
-        <h2>{movie.title}</h2>
-        <text style={{color: 'gray' , fontSize: '24px' , marginLeft: '8px' , fontWeight: '400'}}> ({convertTimeStamptzToYear(movie.release_date)})</text>
+      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', marginTop: '1rem' }}>
+
+        <Typography variant="h2">
+          {movie.title}
+        </Typography>
+
+
+        <Typography fontWeight="fontWeightLight" color="secondary"
+                    sx={{ marginLeft: '8px', fontSize: '24px' }}>
+          ({convertTimeStamptzToYear(movie.release_date)})
+        </Typography>
+
       </div>
 
-      <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
-        <StarIcon sx={{  color: 'orange' }}></StarIcon>
-        <text style={{color: '#418CFB' , fontWeight: '900' , fontSize: '18px'}}>{movie.average_rating.toFixed(1)}</text>
+      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+        <StarIcon sx={{ color: 'orange' }}></StarIcon>
+        <Typography fontWeight="fontWeightExtraBold" sx={{ color: 'rgba(65, 140, 251, 1)', fontSize: '1.5rem' }}>
+          {movie.average_rating.toFixed(1)}
+        </Typography>
       </div>
 
-      <text style={{color: 'gray' , fontSize: '16px' , marginLeft: '8px' , fontWeight: '400'}}>{categories.map((category, index) => ( index === categories.length - 1  ? category.name : category.name + ', '  ) )}</text>
+      <Typography fontWeight="fontWeightLight" color="secondary" sx={{ marginBottom: '1rem' }}>
+        {categories.map(category => category.name).join(', ')}
+      </Typography>
+
 
     </div>
 
   );
 
 
-}
+};
 
 export default MovieInformation;

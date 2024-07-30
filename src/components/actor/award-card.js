@@ -1,5 +1,6 @@
 import styles from '@/styles/Actor.module.css';
 import { useRouter } from 'next/navigation';
+import Typography from '@mui/material/Typography';
 
 
 const AwardCard = ({ award }) => {
@@ -12,28 +13,29 @@ const AwardCard = ({ award }) => {
 
   return (
     <div className={styles.awardCard}>
-      <img src={award.movie.poster} alt="Actor image" />
-
+      <img src={award.movie.poster} alt={award.movie.title} />
       <div style={{ marginTop: '12px' }}>
-
         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
-          <text style={{
-            margin: 0,
-            fontWeight: 600,
-            color: 'rgba(0, 48, 85, 1)',
-            fontFamily: 'Inter',
-          }}> {award.year} </text>
+          <Typography component="text">
+            {award.year}
+          </Typography>
           &nbsp;
-          <text style={{ margin: 0, fontWeight: 600, color: 'rgba(0, 48, 85, 1)', fontFamily: 'Inter' }}>Nominee</text>
 
-          <text style={{
-            fontWeight: 400,
-            color: 'rgba(105, 117, 134, 1)',
-            fontFamily: 'Inter',
-          }}>  &nbsp;{award.name} </text>
+          <Typography component="text">
+            Nominee
+          </Typography>
+          &nbsp;
+
+
+          <Typography component="text" color="secondary" fontWeight="fontWeightLight">
+            &nbsp;{award.name}
+          </Typography>
         </div>
 
-        <text style={{ color: 'rgba(0, 48, 85, 1)', fontWeight: 400, fontFamily: 'Inter' }}> {award.description}</text>
+
+        <Typography component="text" fontWeight="fontWeightLight" fontSize="0.9rem">
+          {award.description}
+        </Typography>
 
 
         <div style={{

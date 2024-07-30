@@ -1,15 +1,24 @@
-import styles from '@/styles/Actor.module.css';
 import ActorItem from '@/components/actor/acting-item';
+import Typography from '@mui/material/Typography';
 
 const ActingContainer = ({ actingList }) => {
   return (
     <>
-      <h2 className={styles.actorDetailedInformationDefaultProperty}>Acting</h2>
-      <ul>
-        {actingList && actingList.length > 0 && actingList.map((movieActor, index) => (
-          <ActorItem key={`acting-item-${index}`} movieActor={movieActor} />
-        ))}
-      </ul>
+      {actingList && actingList.length > 0 &&
+        <>
+
+          <Typography variant="h3" sx={{ paddingBottom: '8px' }}>
+            Acting
+          </Typography>
+
+
+          <ul>
+            {actingList.map((movieActor, index) => (
+              <ActorItem key={`acting-item-${index}`} movieActor={movieActor} />
+            ))}
+          </ul>
+        </>
+      }
     </>
   );
 };
