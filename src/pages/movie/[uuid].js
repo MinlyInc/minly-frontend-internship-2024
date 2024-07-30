@@ -25,12 +25,10 @@ const MovieDetail = () => {
     fetchMovie();
   }, [uuid]);
 
-  if (loading) {
-    return <CircularProgress />;
-  }
 
   return (
     <Box>
+        {loading ? <CircularProgress /> : <></>}
         <Header />
         <Box className={styles.pageContainer}>
             <Box className={styles.movieDetail} p={3}>
