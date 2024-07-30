@@ -50,13 +50,13 @@ const ActorDetail = () => {
               </Card>
               <Box className={styles.personalInfo}>
                 <Typography variant="h5" className={styles.subheading}>Personal information</Typography>
-                <Typography><strong>Known For</strong></Typography>
+                <Typography fontWeight={"bold"}>Known For</Typography>
                 <Typography className={styles.info}>Acting</Typography>
-                <Typography><strong>Gender</strong></Typography>
+                <Typography fontWeight={"bold"}>Gender</Typography>
                 <Typography className={styles.info}>{actor.gender}</Typography>
-                <Typography><strong>Birthdate</strong></Typography>
+                <Typography fontWeight={"bold"}>Birthdate</Typography>
                 <Typography className={styles.info}>{new Date(actor.birthdate).toLocaleDateString()}</Typography>
-                <Typography><strong>Place of Birth</strong></Typography>
+                <Typography fontWeight={"bold"}>Place of Birth</Typography>
                 <Typography className={styles.info}>{actor.nationality}</Typography>
               </Box>
             </Grid>
@@ -84,7 +84,7 @@ const ActorDetail = () => {
                   <li>
                     {actor.movies.map((movie, index) => (
                       <Typography key={index} variant="body1">
-                        <strong>{movie.title}</strong> as {movie.character}
+                        {movie.title} as {movie.character}
                       </Typography>
                     ))}
                   </li>

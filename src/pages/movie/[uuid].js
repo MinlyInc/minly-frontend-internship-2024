@@ -68,8 +68,8 @@ const MovieDetail = () => {
                     <Typography variant="h6" fontWeight={"bold"} color={"#003055"}>Overview</Typography>
                     <Typography variant="body1">{movie.description}</Typography>
                 </Box>
-                <Typography color={"#003055"} variant="body1"><strong>Director:</strong> {movie.director}</Typography>
-                <Typography color={"#003055"} variant="body1"><strong>Language:</strong> {movie.language}</Typography>
+                <Typography color={"#003055"} variant="body1" fontWeight={"bold"}>Director:{movie.director}</Typography>
+                <Typography color={"#003055"} variant="body1" fontWeight={"bold"}>Language:{movie.language}</Typography>
                 </Box>
                 <Box mt={4}>
                 <Typography fontWeight={"bold"} variant="h6" color={"#003055"} marginBottom={"7px"}>Cast</Typography>
@@ -90,18 +90,6 @@ const MovieDetail = () => {
                 </Grid>
                 </Box>
                 <Box mt={4}>
-                {/* <Typography variant="h6">Festivals</Typography> */}
-                {/* <Grid container spacing={2}>
-                    {movie.festivals?.map((festival, index) => (
-                    <Grid item key={index}>
-                        <Card className={styles.festivalCard}>
-                        <CardContent>
-                            <Typography variant="body1">{festival}</Typography>
-                        </CardContent>
-                        </Card>
-                    </Grid>
-                    ))}
-                </Grid> */}
                 </Box>
             </Box>
       </Box>
