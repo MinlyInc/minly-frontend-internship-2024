@@ -22,7 +22,6 @@
 .titleCard {
     color: #3d2ba1;
     margin-right: 1rem;
-    /* font-size: medium; */
 }
 
 .search {
@@ -59,7 +58,7 @@
 }
 
 .largeText {
-    font-size: 1.7rem;  /* Adjust this value as needed */
+    font-size: 1.7rem;
 }
 
 .link {

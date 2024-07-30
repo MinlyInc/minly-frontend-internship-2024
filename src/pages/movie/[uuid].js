@@ -15,7 +15,7 @@ const MovieDetail = () => {
   useEffect(() => {
     const fetchMovie = async () => {
       if (!uuid) return;
-      const response = await fetch(`http://127.0.0.1:3001/movies/details/${uuid}`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL_MOVIES}/details/${uuid}`);
       const fetchedMovie = await response.json();
       console.log(fetchedMovie.movie)
       setMovie(fetchedMovie.movie);

@@ -16,7 +16,6 @@ function MovieList() {
   useEffect(() => {
     const fetchMovies = async (page, sortOption, searchValue) => {
       console.log(process.env.NEXT_PUBLIC_API_URL_MOVIES)
-      // const response = await fetch(`http://127.0.0.1:3001/movies?page=${page}&sort=${sortOption}&search=${searchValue}&genreId=${genre}`);
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL_MOVIES}/movies?page=${page}&sort=${sortOption}&search=${searchValue}&genreId=${genre}`);
       const fetchedMovies = await response.json();
       setMovies(fetchedMovies.movies);

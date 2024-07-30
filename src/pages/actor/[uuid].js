@@ -21,7 +21,7 @@ const ActorDetail = () => {
   useEffect(() => {
     const fetchActor = async () => {
       if (!uuid) return;
-      const response = await fetch(`http://127.0.0.1:3001/actor/${uuid}`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL_MOVIES}/actor/${uuid}`);
       const fetchedActor = await response.json();
       console.log(fetchedActor);
       setActor(fetchedActor);
