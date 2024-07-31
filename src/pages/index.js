@@ -1,7 +1,12 @@
+import'bootstrap/dist/css/bootstrap.min.css'
+import HomePage from '../Component/Items/pages/HomePage';
+
+
+
 export default function Home() {
   return (
     <>
-      Get started by editing src/pages/index.js
+      <HomePage/>
     </>
   );
 }
