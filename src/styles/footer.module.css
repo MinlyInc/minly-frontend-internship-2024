@@ -1,0 +1,46 @@
+
+.mainDiv {
+  width: Fixed (1, 440px) px;
+  height: Fixed (214px) px;
+  top: 1280px;
+  padding: 44px 112px 58px 70px;
+  gap: 0px;
+  justify-content: space-between;
+  opacity: 0px;
+  background: linear-gradient(rgba(0, 48, 85, 1), rgba(3, 74, 129, 1));
+  text-align: center;
+  margin-top: 20px;
+  
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.footer-content {
+  display: flex;
+  gap: 20px;
+
+}
+
+.footer-content a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  outline: none;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.footer-content a:hover,
+.footer-content a:focus {
+  opacity: 0.8;
+}
+
+.copyright {
+  color: #999;
+  font-size: 12px;
+}
