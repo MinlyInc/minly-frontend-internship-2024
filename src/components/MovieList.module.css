@@ -1,0 +1,42 @@
+.movieList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding: 14px;
+  width: 81.25%;
+  height: 90%;
+  background-color: #F7F8FC;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+  
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    background-color:#F7F8FC;
+    margin-left: 110px;
+  }
+  
+  
+  .sortControl {
+    min-width: 235px;
+    width: 235px;
+    flex-direction: row;
+    margin-left: 900px;
+  }
+  
+  .sortControl .MuiOutlinedInput-root {
+    height: 100%;
+  }
+  
+  .sortControl .MuiSelect-select {
+    padding: 12px;
+  }
+  
+  .sortControl .MuiInputLabel-outlined {
+    top: -6px;
+  }
+  
